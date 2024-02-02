@@ -1,5 +1,5 @@
 import AssistantDarkMode from './assistantDarkMode'
-import LeftSide, { testInstructions } from './LeftSide'
+import LeftSide, { testInstructions } from './leftSide'
 
 export default function Assistant() {
   return (
@@ -33,9 +33,8 @@ export default function Assistant() {
               <div className="h-10 px-6 mt-8">
                 <div className="font-semibold">get_freebusy</div>
                 <div>
-                  {' '}
-                  "timeMin": "2023-12-18T00:00:00+09:00", "timeMax":
-                  "2023-12-24T23:59:59+09:00"{' '}
+                  &quot;timeMin&quot;: &quot;2023-12-18T00:00:00+09:00&quot;,
+                  &quot;timeMax&quot;: &quot;2023-12-24T23:59:59+09:00&quot;
                 </div>
               </div>
             </div>
