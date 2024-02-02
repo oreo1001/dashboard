@@ -54,7 +54,7 @@ const GPTInput = () => {
   }
 
   return (
-    <div ref={wrapperRef} className="bg-white rounded-xl">
+    <div ref={wrapperRef} className="rounded-xl">
       <div
         className={`flex flex-row my-2 px-2 py-1 rounded-md border-gray-200 border-[2px]`}
       >

@@ -22,7 +22,7 @@ export default function LeftSide() {
         <div className="mt-5 font-semibold">Instructions</div>
         <div className="my-2 px-2 py-1 h-48 rounded-xl border-gray-200 border-[2px]">
           <textarea
-            className="w-full h-full focus:outline-none"
+            className="w-full h-full focus:outline-none bg-transparent"
             defaultValue={testInstructions}
           />
         </div>
