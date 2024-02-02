@@ -1,14 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { MyNavbar } from './myNavBar'
-import Switcher from './switcher'
-import ColorProvider from './colorProvider'
 import MainContent from './mainContent'
+import MainDarkMode from './mainDarkMode'
 
 export default function Home() {
   return (
-    <ColorProvider>
+    <MainDarkMode>
       <MainContent></MainContent>
-    </ColorProvider>
+    </MainDarkMode>
   )
 }
