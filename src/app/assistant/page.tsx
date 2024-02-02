@@ -1,5 +1,5 @@
 import AssistantDarkMode from './assistantDarkMode'
-import LeftSide, { testInstructions } from './leftSide'
+import LeftSide, { testInstructions } from './LeftSide'
 
 //d
 export default function Assistant() {
