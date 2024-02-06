@@ -1,9 +1,16 @@
+'use client'
 import MainDarkMode from '../mainDarkMode'
-import { decrement, increment, reset } from '@/redux/slices/counterSlice'
+import {
+  decrement,
+  increment,
+  reset,
+  selectValue,
+} from '@/redux/slices/authSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import NavBar from './navBar'
 
 export default function Auth() {
-  const count = useAppSelector((state) => state.counterReducer.value)
+  const count = useAppSelector(selectValue)
   const dispatch = useAppDispatch()
   return (
     <div className="h-screen">
@@ -16,6 +23,8 @@ export default function Auth() {
           decrement
         </button>
         <button onClick={() => dispatch(reset())}>reset</button>
+        <div>{count}</div>
+        <NavBar></NavBar>
       </MainDarkMode>
     </div>
   )

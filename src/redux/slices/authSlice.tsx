@@ -1,17 +1,20 @@
 'use client'
+
 import { RootState } from '../store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-type CounterState = {
+type AuthState = {
   value: number
 }
 
-const initialState: CounterState = {
+const initialState: AuthState = {
   value: 0,
 }
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const authSlice = createSlice({
+  name: 'auth',
   initialState,
   reducers: {
     reset: () => initialState,
@@ -36,6 +39,13 @@ export const {
   decrement,
   decrementByAmount,
   reset,
-} = counterSlice.actions
-export const selectValue = (state: RootState) => state.counter.value
-export default counterSlice.reducer
+} = authSlice.actions
+
+const persistConfig = {
+  key: 'auth',
+  storage,
+}
+export const selectValue = (state: RootState) => state.auth.value
+const persistedAuthReducer = persistReducer(persistConfig, authSlice.reducer)
+
+export default persistedAuthReducer
