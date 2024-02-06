@@ -1,7 +1,6 @@
 import AssistantDarkMode from './assistantDarkMode'
-import LeftSide, { testInstructions } from './LeftSide'
+import LeftSide, { testInstructions } from './leftSide'
 
-//d
 export default function Assistant() {
   return (
     <div className="h-screen">
