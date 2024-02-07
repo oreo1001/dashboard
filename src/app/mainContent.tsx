@@ -20,24 +20,45 @@ const MainContent = () => {
           width={800}
           height={800}
           alt="1"
+          priority
+          style={{
+            maxWidth: '100%',
+            width: 'auto',
+            height: 'auto',
+          }}
         />
         <Image
           src="/assets/landing/노션2_그림자없음.png"
           width={800}
           height={800}
           alt="1"
+          style={{
+            maxWidth: '100%',
+            width: 'auto',
+            height: 'auto',
+          }}
         />
         <Image
           src="/assets/landing/노션3.png"
           width={800}
           height={800}
           alt="1"
+          style={{
+            maxWidth: '100%',
+            width: 'auto',
+            height: 'auto',
+          }}
         />
         <Image
           src="/assets/landing/노션4.png"
           width={800}
           height={800}
           alt="1"
+          style={{
+            maxWidth: '100%',
+            width: 'auto',
+            height: 'auto',
+          }}
         />
       </div>
     </>

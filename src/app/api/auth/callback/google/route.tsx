@@ -1,9 +1,7 @@
 import axios from 'axios'
-import { NextResponse } from 'next/server'
+import {cookies} from 'next/headers'
+import { NextRequest, NextResponse } from 'next/server'
 import { redirect } from 'next/navigation'
-// import { setAuth } from '@/redux/slices/authSlice'
-// import { useAppDispatch } from '@/redux/hooks'
-// const dispatch = useAppDispatch()
 
 async function getRefreshTokenFromAuthCode(authCode: string) {
   const url = 'https://oauth2.googleapis.com/token'
@@ -22,64 +20,21 @@ async function getRefreshTokenFromAuthCode(authCode: string) {
     refreshToken: tokens['refresh_token'],
   }
 }
-async function getUserData(accessToken: string) {
-  const profileUrl =
-    'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + accessToken
-  const profileResponse = await axios.get(profileUrl)
-  const profile = profileResponse.data
-  return {
-    id: 'google-' + profile.id,
-    email: profile.email,
-    name: profile.name,
-    picture: profile.picture,
-  }
-}
-async function sendRefreshToken(authData: any, refreshToken: string) {
-  const params = {
-    ...authData,
-    refreshToken: refreshToken,
-  }
-  // const apiResponse = await axios.post(
-  //   process.env.LOCAL_BACK_API_SERVER || '',
-  //   params,
-  // )
-  // console.log(apiResponse)
-  // dispatch(setAuth(authData))
-  console.log(params)
-}
 
-export async function GET(req: Request, res: any) {
+export async function GET(req: NextRequest, res: NextResponse) {
   const url = new URL(req.url)
   const authCode = url.searchParams.get('code') || ''
   const tokens = await getRefreshTokenFromAuthCode(authCode)
-  const profile = await getUserData(tokens.accessToken)
-  sendRefreshToken(createAuthData(profile), tokens.refreshToken)
-  res.setHeader('Set-Cookie', {
-    tokens: {
-      refresh_token: tokens.refreshToken,
-      access_token: tokens.accessToken,
-    },
-  })
-  //res.redirect('/auth')
+  cookies().set("access_token", tokens.accessToken);
+  cookies().set("refresh_token", tokens.refreshToken);
   redirect('/auth')
-  // return NextResponse.json({
-  //   profile: createAuthData(profile),
-  //   token: tokens.refreshToken,
-  // })
-}
-export async function POST(req: Request, res: any) {
-  const url = new URL(req.url)
-  const authCode = url.searchParams.get('code') || ''
-  await getRefreshTokenFromAuthCode(authCode)
-  //return NextResponse.json({ message: 'Post Successed' })
-  res.redirect()
 }
 
-function createAuthData(profile: any) {
-  return {
-    id: profile.id,
-    email: profile.email,
-    name: profile.name,
-    picture: profile.picture,
-  }
-}
+// export async function POST(req: Request, res: NextResponse) {
+//   const url = new URL(req.url)
+//   const authCode = url.searchParams.get('code') || ''
+//   const tokens = await getRefreshTokenFromAuthCode(authCode)
+//   res.cookies.set('access_token',tokens.accessToken,{path:'/auth'})
+//   res.cookies.set('refresh_token',tokens.refreshToken,{path:'/auth'})
+//   redirect('/auth')
+// }

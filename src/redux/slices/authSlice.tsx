@@ -3,6 +3,7 @@
 import { RootState } from '../store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { persistReducer } from 'redux-persist'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import storage from 'redux-persist/lib/storage'
 
 type AuthState = {
@@ -40,9 +41,9 @@ export const { reset, setAuth } = authSlice.actions
 
 const persistConfig = {
   key: 'auth',
-  storage,
+  storage
 }
 export const getAuthState = (state: RootState) => state.auth
-const persistedAuthReducer = persistReducer(persistConfig, authSlice.reducer)
+const persistedAuthReducer = persistReducer(persistConfig, authSlice.reducer) 
 
 export default persistedAuthReducer
