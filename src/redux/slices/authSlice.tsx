@@ -6,11 +6,19 @@ import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 type AuthState = {
-  value: number
+  isLogin: boolean
+  id: string
+  name: string
+  email: string
+  picture: string
 }
 
 const initialState: AuthState = {
-  value: 0,
+  id: '',
+  name: '',
+  email: '',
+  picture: '',
+  isLogin: false,
 }
 
 export const authSlice = createSlice({
@@ -18,34 +26,23 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     reset: () => initialState,
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
-    },
-    decrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value -= action.payload
+    setAuth: (state, action: PayloadAction<AuthState>) => {
+      state.isLogin = true
+      state.id = action.payload.id
+      state.name = action.payload.name
+      state.email = action.payload.email
+      state.picture = action.payload.picture
     },
   },
 })
 
-export const {
-  increment,
-  incrementByAmount,
-  decrement,
-  decrementByAmount,
-  reset,
-} = authSlice.actions
+export const { reset, setAuth } = authSlice.actions
 
 const persistConfig = {
   key: 'auth',
   storage,
 }
-export const selectValue = (state: RootState) => state.auth.value
+export const getAuthState = (state: RootState) => state.auth
 const persistedAuthReducer = persistReducer(persistConfig, authSlice.reducer)
 
 export default persistedAuthReducer
