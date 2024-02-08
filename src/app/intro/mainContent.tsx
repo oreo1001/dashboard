@@ -33,6 +33,8 @@ const MainContent = () => {
           width={800}
           height={800}
           alt="1"
+          placeholder="blur"
+          blurDataURL="/assets/placeholder.png"
           style={{
             maxWidth: '100%',
             width: 'auto',
@@ -44,6 +46,8 @@ const MainContent = () => {
           width={800}
           height={800}
           alt="1"
+          placeholder="blur"
+          blurDataURL="/assets/placeholder.png"
           style={{
             maxWidth: '100%',
             width: 'auto',
@@ -55,6 +59,8 @@ const MainContent = () => {
           width={800}
           height={800}
           alt="1"
+          placeholder="blur"
+          blurDataURL="/assets/placeholder.png"
           style={{
             maxWidth: '100%',
             width: 'auto',

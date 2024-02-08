@@ -35,7 +35,6 @@ export default function LoginButton() {
   }, [cookies.access_token]) // 쿠키가 변경될 때마다 useEffect 실행
   useEffect(() => {
     const sendRefreshTokenToBack = async () => {
-      console.log(cookies.refresh_token)
       if (cookies.refresh_token === undefined) {
         dispatch(reset())
       } else {
@@ -77,14 +76,14 @@ export default function LoginButton() {
             <Image
               src="/assets/google-logo.png"
               alt="google logo"
-              width={16}
-              height={16}
+              sizes="16"
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.png"
               // style={{
               //   maxWidth: '100%',
               //   width: 'auto',
               //   height: 'auto',
               // }}
-              loading="lazy"
               className="m-auto"
             />
           </div>
@@ -107,16 +106,14 @@ export default function LoginButton() {
           <div>{profile.email}</div>
           <div>{profile.name}</div>
           {/* <div>{profile.picture}</div> */}
-          {profile.picture ? (
-            <Image src={profile.picture} width="80" height="80" alt="" />
-          ) : (
-            <Image
-              src={'/assets/placeholder.png'}
-              width="80"
-              height="80"
-              alt=""
-            />
-          )}
+          <Image
+            src={profile.picture}
+            placeholder="blur"
+            blurDataURL="/assets/placeholder.png"
+            width="80"
+            height="80"
+            alt=""
+          />
         </>
       ) : (
         <div></div>

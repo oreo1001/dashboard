@@ -21,6 +21,8 @@ export function MainNavbar({ onToggleTheme }: any) {
               alt="Logo"
               width={40}
               height={40}
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.png"
               style={{
                 maxWidth: '100%',
                 width: 'auto',

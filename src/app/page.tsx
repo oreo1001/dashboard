@@ -25,6 +25,8 @@ export default function Auth() {
               alt="intro"
               width={600}
               height={600}
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.png"
               style={{
                 maxWidth: '100%',
                 width: 'auto',
