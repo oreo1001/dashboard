@@ -20,7 +20,7 @@ const MainContent = () => {
           width={800}
           height={800}
           alt="1"
-          priority
+          placeholder="blur"
           style={{
             maxWidth: '100%',
             width: 'auto',

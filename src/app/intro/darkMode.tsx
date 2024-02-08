@@ -2,12 +2,13 @@
 
 import { ReactNode, useState } from 'react'
 import { DARK_COLORS, LIGHT_COLORS } from '@/constant'
-import { MainNavbar } from './mainNavBar'
+import Switcher from '../switcher'
+import { MyNavbar } from './myNavBar'
 
-interface MainDarkProps {
+interface DarkProps {
   children: ReactNode
 }
-function MainDarkMode({ children }: MainDarkProps) {
+function DarkMode({ children }: DarkProps) {
   const [colorTheme, setColorTheme] = useState('light')
 
   const colorVariables = colorTheme === 'light' ? DARK_COLORS : LIGHT_COLORS
@@ -19,10 +20,10 @@ function MainDarkMode({ children }: MainDarkProps) {
     <div
       className={`min-h-screen ${colorTheme == 'light' ? 'bg-white text-black' : 'bg-[#2f3537] text-white'}`}
     >
-      <MainNavbar onToggleTheme={toggleTheme} />
+      <MyNavbar onToggleTheme={toggleTheme} />
       {children}
     </div>
   )
 }
 
-export default MainDarkMode
+export default DarkMode

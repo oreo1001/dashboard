@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slices/counterSlice'
-import persistedAuthReducer from './slices/authSlice'
+import authReducer from './slices/authSlice'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    auth: persistedAuthReducer,
+    //auth: persistedAuthReducer,
+    auth: authReducer,
   },
   //   devTools: process.env.NODE_ENV !== "production",
 })
@@ -28,17 +29,17 @@ const createNoopStorage = () => {
   }
 }
 
-const storage =
-  typeof window === 'undefined'
-    ? createNoopStorage()
-    : createWebStorage('local')
+// const storage =
+//   typeof window === 'undefined'
+//     ? createNoopStorage()
+//     : createWebStorage('local')
 
-const rootPersistConfig = {
-  key: 'root', // root에서부터 저장"
-  storage, // storage = localStorage
-  // blacklist: ['question'],
-}
-export default storage
+// const rootPersistConfig = {
+//   key: 'root', // root에서부터 저장"
+//   storage, // storage = localStorage
+//   // blacklist: ['question'],
+// }
+// export default storage
 
 // export type AppThunk<ReturnType = void> = ThunkAction<
 //   ReturnType,

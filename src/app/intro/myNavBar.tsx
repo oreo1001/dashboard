@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import '../globals.css'
 import Switcher from '../switcher'
 
-export function AssistantNavbar({ onToggleTheme }: any) {
+export function MyNavbar({ onToggleTheme }: any) {
   const router = useRouter()
   return (
     <div className="mx-auto px-4 sm:px-6 lg:px-8 shadow">
@@ -23,15 +23,18 @@ export function AssistantNavbar({ onToggleTheme }: any) {
                 height: 'auto',
               }}
             />
-            <span className="ml-2 font-bold text-xl font-mono">
-              CareeBee Playground
-            </span>
+            <span className="ml-2 font-bold text-xl font-mono">CareeBee</span>
           </div>
         </button>
-        <div className="flex items-center">
-          {/* <button className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600">
-            회원가입
-          </button> */}
+        <div className="flex items-center justify-start">
+          <button
+            onClick={() => router.push('/assistant')}
+            className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600"
+          >
+            Playground
+          </button>
+        </div>
+        <div className="flex justify-end">
           <Switcher onToggle={onToggleTheme} />
         </div>
       </div>

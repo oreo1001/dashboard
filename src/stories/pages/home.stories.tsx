@@ -1,4 +1,4 @@
-import Home from '../../app/page'
+import Home from '../../app/intro/page'
 import '../../app/globals.css'
 
 export default {

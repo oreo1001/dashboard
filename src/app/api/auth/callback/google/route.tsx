@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {cookies} from 'next/headers'
+import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { redirect } from 'next/navigation'
 
@@ -9,7 +9,7 @@ async function getRefreshTokenFromAuthCode(authCode: string) {
     code: authCode,
     client_id: process.env.GOOGLE_CLIENT_ID || '',
     client_secret: process.env.GOOGLE_CLIENT_SECRET || '',
-    redirect_uri: 'http://localhost:3000/api/auth/callback/google',
+    redirect_uri: process.env.THIS_APP_URL + '/api/auth/callback/google',
     grant_type: 'authorization_code',
   }
 
@@ -25,9 +25,9 @@ export async function GET(req: NextRequest, res: NextResponse) {
   const url = new URL(req.url)
   const authCode = url.searchParams.get('code') || ''
   const tokens = await getRefreshTokenFromAuthCode(authCode)
-  cookies().set("access_token", tokens.accessToken);
-  cookies().set("refresh_token", tokens.refreshToken);
-  redirect('/auth')
+  cookies().set('access_token', tokens.accessToken)
+  cookies().set('refresh_token', tokens.refreshToken)
+  redirect('/')
 }
 
 // export async function POST(req: Request, res: NextResponse) {

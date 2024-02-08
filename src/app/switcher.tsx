@@ -6,7 +6,7 @@ interface SwitcherProps {
   onToggle: (value: boolean) => void
 }
 
-const Switcher = ({onToggle} : SwitcherProps) => {
+const Switcher = ({ onToggle }: SwitcherProps) => {
   const [isChecked, setIsChecked] = useState(true)
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked)
@@ -31,16 +31,15 @@ const Switcher = ({onToggle} : SwitcherProps) => {
           }`}
         >
           {isChecked ? (
-            <div className='flex items-center text-sm'>☀️</div> // 해 모양 아이콘
+            <div className="flex items-center text-sm">☀️</div> // 해 모양 아이콘
           ) : null}
           <span
             className={`dot h-6 w-6 rounded-full bg-white duration-200 ${
               isChecked ? 'translate-x-[13px]' : ''
             }`}
-          > 
-          </span>
+          ></span>
           {!isChecked ? (
-            <div className='flex w-4 text-sm'>🌙</div> // 달 모양 아이콘
+            <div className="flex w-4 text-sm">🌙</div> // 달 모양 아이콘
           ) : null}
         </span>
         <span className="label flex items-center text-lg font-bold text-indigo-400">
@@ -51,4 +50,4 @@ const Switcher = ({onToggle} : SwitcherProps) => {
   )
 }
 
-export default Switcher;
+export default Switcher
