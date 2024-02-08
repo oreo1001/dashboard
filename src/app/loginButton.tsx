@@ -9,7 +9,7 @@ import GOOGLE_AUTHORIZATION_URL from './googleUrl'
 import Image from 'next/image'
 
 export default function LoginButton() {
-  const TOKEN_EXPIRE_TIME = 3600 * 1000
+  const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
   const router = useRouter()
   const profile = useAppSelector(getAuthState)
   const dispatch = useAppDispatch()

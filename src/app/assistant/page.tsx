@@ -1,12 +1,10 @@
 import AssistantDarkMode from './assistantDarkMode'
-import LeftSide, { testInstructions } from './leftSide'
 
 export default function Assistant() {
   return (
     <div className="h-screen">
       <AssistantDarkMode>
         <div className="flex flex-row">
-          <LeftSide></LeftSide>
           <div className="flex-col flex flex-grow h-screen">
             {/* flex-grow로 남은 공간 width 정하고 그 이후에 flex-grow */}
             <div className="flex p-5 h-16 flex-row">
@@ -27,7 +25,7 @@ export default function Assistant() {
               <div className="flex flex-col w-full mt-8 h-20 border-[1px] border-stone-200 rounded-lg px-6 py-3">
                 <div className="flex font-semibold">Run instructions</div>
                 <div className="pt-1 w-32 overflow-hidden overflow-ellipsis whitespace-nowrap">
-                  {testInstructions}
+                  {/* {testInstructions} */}
                 </div>
               </div>
               <div className="h-10 px-6 mt-8">
