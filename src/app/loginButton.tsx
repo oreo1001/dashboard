@@ -35,15 +35,21 @@ export default function LoginButton() {
   }, [cookies.access_token]) // 쿠키가 변경될 때마다 useEffect 실행
   useEffect(() => {
     const sendRefreshTokenToBack = async () => {
+      console.log(cookies.refresh_token)
       if (cookies.refresh_token === undefined) {
         dispatch(reset())
       } else {
-        await axios.post(
-          process.env.NEXT_PUBLIC_API_SERVER + '/api/auth/signIn',
+        const tempRefreshToken = cookies.refresh_token
+        const response = await axios.post(
+          process.env.NEXT_PUBLIC_API_SERVER + '/auth/signIn',
           {
-            refreshToken: cookies.refreshToken,
+            refreshToken: tempRefreshToken,
+          },
+          {
+            withCredentials: true,
           },
         )
+        console.log(response.data)
       }
     }
     sendRefreshTokenToBack()
