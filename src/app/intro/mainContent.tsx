@@ -21,6 +21,7 @@ const MainContent = () => {
           height={800}
           alt="1"
           placeholder="blur"
+          blurDataURL="/assets/placeholder.png"
           style={{
             maxWidth: '100%',
             width: 'auto',
