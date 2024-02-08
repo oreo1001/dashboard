@@ -59,12 +59,19 @@ export default function LoginButton() {
           onClick={handleSignIn}
         >
           <div className="ml-3 my-auto flex items-center w-8 h-8 bg-white rounded-md">
-            <img
-              className="m-auto w-4 h-4"
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              loading="lazy"
+            <Image
+              src="/assets/google-logo.png"
               alt="google logo"
-            ></img>
+              width={16}
+              height={16}
+              // style={{
+              //   maxWidth: '100%',
+              //   width: 'auto',
+              //   height: 'auto',
+              // }}
+              loading="lazy"
+              className="m-auto"
+            />
           </div>
 
           <div className="ml-2 my-auto flex text-white items-center">
