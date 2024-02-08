@@ -18,7 +18,6 @@ export default function LoginButton() {
   const logout = () => {
     removeCookie('refresh_token')
     removeCookie('access_token')
-    dispatch(reset())
   }
   useEffect(() => {
     const sendProfileAPI = async () => {
@@ -33,7 +32,23 @@ export default function LoginButton() {
       }
     }
     sendProfileAPI()
-  }, [cookies]) // 쿠키가 변경될 때마다 useEffect 실행
+  }, [cookies.access_token]) // 쿠키가 변경될 때마다 useEffect 실행
+  useEffect(() => {
+    const sendRefreshTokenToBack = async () => {
+      if (cookies.refresh_token === undefined) {
+        dispatch(reset())
+      } else {
+        await axios.post(
+          process.env.NEXT_PUBLIC_API_SERVER + '/api/auth/signIn',
+          {
+            refreshToken: cookies.refreshToken,
+          },
+        )
+      }
+    }
+    sendRefreshTokenToBack()
+  }, [cookies.refresh_token])
+
   const silentRefreshAccessToken = async () => {
     try {
       await axios.get('/api/auth/refresh')
@@ -41,12 +56,6 @@ export default function LoginButton() {
     } catch (e) {
       console.log(e)
     }
-  }
-
-  const sendRefreshTokenToBack = async () => {
-    await axios.post(process.env.NEXT_PUBLIC_API_SERVER + '/api/auth/profile', {
-      refreshToken: cookies.refreshToken,
-    })
   }
   const handleSignIn = () => {
     router.push(GOOGLE_AUTHORIZATION_URL)

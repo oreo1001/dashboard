@@ -17,7 +17,7 @@ export function MainNavbar({ onToggleTheme }: any) {
         <button onClick={() => router.push('/')}>
           <div className="flex-shrink-0 flex items-center">
             <Image
-              src="/assets/캘린더-로고.png"
+              src="/assets/dona-logo.png"
               alt="Logo"
               width={40}
               height={40}
@@ -27,9 +27,7 @@ export function MainNavbar({ onToggleTheme }: any) {
                 height: 'auto',
               }}
             />
-            <span className="ml-2 font-sans text-[#759CCC] text-xl">
-              CareeBee
-            </span>
+            <span className="ml-2 font-sans text-[#759CCC] text-xl">Donna</span>
           </div>
         </button>
         <div className="flex-row md:flex hidden">
