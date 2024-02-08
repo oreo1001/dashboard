@@ -1,12 +1,6 @@
 import axios from 'axios'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-}
-
 async function getUserData(accessToken: string) {
   const profileUrl =
     'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + accessToken
@@ -26,6 +20,6 @@ export async function POST(nextReq: NextRequest) {
     return NextResponse.json({ error: 'no token in cookie' })
   } else {
     const profile = await getUserData(accessToken.value)
-    return NextResponse.json(profile, { headers: corsHeaders })
+    return NextResponse.json(profile)
   }
 }
