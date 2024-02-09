@@ -1,16 +1,18 @@
 'use client'
 
 import { useAppDispatch } from '@/redux/hooks'
-import { toggle } from '@/redux/slices/colorSlice'
+import { toggleDark } from '@/redux/slices/darkSlice'
 import React, { useState } from 'react'
+import { useTheme } from 'next-themes'
 
 const Switcher = () => {
   const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked)
-    dispatch(toggle())
+    dispatch(toggleDark())
   }
+  const { theme, setTheme } = useTheme()
 
   return (
     <>

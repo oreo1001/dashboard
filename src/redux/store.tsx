@@ -2,13 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slices/counterSlice'
 import persistedAuthReducer from './slices/authSlice'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
-import persistedColorReducer from './slices/colorSlice'
+import persistedDarkReducer from './slices/darkSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: persistedAuthReducer,
-    color: persistedColorReducer,
+    dark: persistedDarkReducer,
   },
   //   devTools: process.env.NODE_ENV !== "production",
 })

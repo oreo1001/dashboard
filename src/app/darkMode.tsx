@@ -1,21 +1,20 @@
 'use client'
 
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import { DARK_COLORS, LIGHT_COLORS } from '@/constant'
-import { MainNavbar } from './mainNavBar'
 import { useAppSelector } from '@/redux/hooks'
-import { getColorState } from '@/redux/slices/colorSlice'
+import { getDarkState, getIsDarkState } from '@/redux/slices/darkSlice'
 
 interface DarkProps {
   children: ReactNode
 }
 function DarkMode({ children }: DarkProps) {
-  const isLight = useAppSelector(getColorState)
-  const colorVariables = !isLight ? DARK_COLORS.color : LIGHT_COLORS.color
-
+  // const theme2 = useAppSelector(getDarkState)
+  const isDark = useAppSelector(getIsDarkState)
   return (
     <div
-      className={`min-h-screen ${colorVariables} ${isLight ? 'text-black' : 'text-white'}`}
+      id="dark"
+      className={`${isDark ? '!bg-[#2f3537] !text-white border-white' : '!bg-white !text-black'}`}
     >
       {children}
     </div>

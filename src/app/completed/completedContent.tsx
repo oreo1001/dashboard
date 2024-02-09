@@ -6,7 +6,7 @@ import { IoCheckmark } from 'react-icons/io5'
 export default function CompletedContent() {
   const router = useRouter()
   return (
-    <div className="min-w-[600px] flex flex-col items-center">
+    <div className="flex flex-col items-center min-h-screen">
       <IoCheckmark
         className="mt-[200px] bg-blue-400 text-white rounded-full shadow-lg"
         size={100}
