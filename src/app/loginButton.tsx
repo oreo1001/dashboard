@@ -5,8 +5,9 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import GOOGLE_AUTHORIZATION_URL from './googleUrl'
-import Image from 'next/image'
+import GOOGLE_AUTHORIZATION_URL from './component/googleUrl'
+import ImageFrame from './component/imageFrame'
+import { GoogleButton, GoogleButton2 } from './component/googleButton'
 
 export default function LoginButton() {
   const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
@@ -62,36 +63,10 @@ export default function LoginButton() {
       console.log(e)
     }
   }
-  const handleSignIn = () => {
-    router.push(GOOGLE_AUTHORIZATION_URL)
-  }
   return (
     <>
       {!profile.isLogin ? (
-        <div
-          className="flex flex-row w-56 h-12 cursor-pointer border-[0.5px] rounded-md bg-blue-400"
-          onClick={handleSignIn}
-        >
-          <div className="ml-3 my-auto flex items-center w-8 h-8 bg-white rounded-md">
-            <Image
-              src="/assets/google-logo.png"
-              alt="google logo"
-              sizes="16"
-              placeholder="blur"
-              blurDataURL="/assets/placeholder.png"
-              // style={{
-              //   maxWidth: '100%',
-              //   width: 'auto',
-              //   height: 'auto',
-              // }}
-              className="m-auto"
-            />
-          </div>
-
-          <div className="ml-2 my-auto flex text-white items-center">
-            Sign up with Google
-          </div>
-        </div>
+        <GoogleButton></GoogleButton>
       ) : (
         <div
           onClick={logout}
@@ -106,14 +81,7 @@ export default function LoginButton() {
           <div>{profile.email}</div>
           <div>{profile.name}</div>
           {/* <div>{profile.picture}</div> */}
-          <Image
-            src={profile.picture}
-            placeholder="blur"
-            blurDataURL="/assets/placeholder.png"
-            width="80"
-            height="80"
-            alt=""
-          />
+          <ImageFrame src={profile.picture} size={80}></ImageFrame>
         </>
       ) : (
         <div></div>

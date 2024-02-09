@@ -1,10 +1,12 @@
-import AssistantDarkMode from './assistantDarkMode'
+import DarkMode from '../darkMode'
+import { AssistantNavbar } from './assistantNavBar'
 import LeftSide, { testInstructions } from './leftSide'
 
 export default function Assistant() {
   return (
     <div className="h-screen">
-      <AssistantDarkMode>
+      <DarkMode>
+        <AssistantNavbar></AssistantNavbar>
         <div className="flex flex-row">
           <LeftSide></LeftSide>
           <div className="flex-col flex flex-grow h-screen">
@@ -53,7 +55,7 @@ export default function Assistant() {
             </div>
           </div>
         </div>
-      </AssistantDarkMode>
+      </DarkMode>
     </div>
   )
 }

@@ -1,42 +1,23 @@
-import MainDarkMode from './mainDarkMode'
-import { cookies } from 'next/headers'
-import LoginButton from './loginButton'
-import Image from 'next/image'
+import DarkMode from './darkMode'
+import { MainNavbar } from './mainNavBar'
+import MainContent from './mainContent'
+import ImageFrame from './component/imageFrame'
+import { MainView1, MainView2, MainView3 } from './mainView'
 
-export default function Auth() {
+export default function Main() {
   //const accessToken = cookies().get('access_token') || ''
   //console.log('access_token 출력 : ',accessToken)
   return (
     <div className="h-screen">
-      <MainDarkMode>
-        <div className="flex justify-center items-start min-h-screen">
-          <div className="max-w-[600px] pt-[150px] flex flex-col justify-center items-center">
-            <div className="flex text-4xl pb-5 text-center font-semibold text-gray-700 items-center justify-center">
-              Easy scheduling with others
-            </div>
-            <div className="flex py-3 text-lg text-center text-gray-600 ">
-              CareeBee is the best choice for you. You will be able to minimize
-              the inconvenience of coordinating schedules with others.
-            </div>
-            <div className="pb-12 border-t-[1px] border-stone-200 w-full"></div>
-            <Image
-              className="pb-12"
-              src="/assets/assistant1.png"
-              alt="intro"
-              width={600}
-              height={600}
-              placeholder="blur"
-              blurDataURL="/assets/placeholder.png"
-              style={{
-                maxWidth: '100%',
-                width: 'auto',
-                height: 'auto',
-              }}
-            />
-            <LoginButton></LoginButton>
-          </div>
+      <DarkMode>
+        <MainNavbar></MainNavbar>
+        <MainContent></MainContent>
+        <div className="flex flex-col items-center min-h-screen bg-[#E9ECF5]">
+          <MainView1></MainView1>
+          <MainView2></MainView2>
+          <MainView3></MainView3>
         </div>
-      </MainDarkMode>
+      </DarkMode>
     </div>
   )
 }

@@ -1,10 +1,12 @@
-import MainContent from './mainContent'
-import DarkMode from './darkMode'
+import IntroContent from './introContent'
+import DarkMode from '../darkMode'
+import MyNavbar from './myNavBar'
 
 export default function Intro() {
   return (
     <DarkMode>
-      <MainContent></MainContent>
+      <MyNavbar></MyNavbar>
+      <IntroContent></IntroContent>
     </DarkMode>
   )
 }

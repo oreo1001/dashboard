@@ -1,16 +1,15 @@
 'use client'
 
+import { useAppDispatch } from '@/redux/hooks'
+import { toggle } from '@/redux/slices/colorSlice'
 import React, { useState } from 'react'
 
-interface SwitcherProps {
-  onToggle: (value: boolean) => void
-}
-
-const Switcher = ({ onToggle }: SwitcherProps) => {
+const Switcher = () => {
+  const dispatch = useAppDispatch()
   const [isChecked, setIsChecked] = useState(true)
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked)
-    onToggle(!isChecked)
+    dispatch(toggle())
   }
 
   return (
