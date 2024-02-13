@@ -3,7 +3,6 @@
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleDark } from '@/redux/slices/darkSlice'
 import React, { useState } from 'react'
-import { useTheme } from 'next-themes'
 
 const Switcher = () => {
   const dispatch = useAppDispatch()
@@ -12,7 +11,6 @@ const Switcher = () => {
     setIsChecked(!isChecked)
     dispatch(toggleDark())
   }
-  const { theme, setTheme } = useTheme()
 
   return (
     <>
