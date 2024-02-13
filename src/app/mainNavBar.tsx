@@ -17,7 +17,7 @@ export function MainNavbar() {
   const profile = useAppSelector(getAuthState)
 
   return (
-    <div className="max-w-[960px] w-full px-4 sm:px-6 lg:px-8">
+    <div className="max-w-[1200px] w-full px-4 sm:px-6 lg:px-8">
       <div className="flex h-16 justify-between">
         <button onClick={() => router.push('/')}>
           <div className="flex-shrink-0 flex items-center">
@@ -38,20 +38,22 @@ export function MainNavbar() {
               </div>
             </div>
           ) : (
-            <Image
-              className="ml-10 my-2 rounded-full"
-              src={profile.picture}
-              alt="frame"
-              width={30}
-              height={30}
-              placeholder="blur"
-              blurDataURL="/assets/placeholder.png"
-              style={{
-                maxWidth: '100%',
-                width: 'auto',
-                height: 'auto',
-              }}
-            />
+            <>
+              {/* <Image
+                className="ml-10 my-2 rounded-full"
+                src={profile.picture}
+                alt="frame"
+                width={30}
+                height={30}
+                placeholder="blur"
+                blurDataURL="/assets/placeholder.png"
+                style={{
+                  maxWidth: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                }}
+              /> */}
+            </>
           )}
         </div>
       </div>

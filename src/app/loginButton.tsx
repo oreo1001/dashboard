@@ -71,7 +71,7 @@ export default function LoginButton() {
       ) : (
         <div
           onClick={logout}
-          className="flex my-auto w-16 sm:w-16 lg:w-20 xl:w-1/3 h-8 md:h-10  cursor-pointer border-[0.5px] rounded-md bg-blue-400"
+          className="flex my-auto w-16 sm:w-20 lg:w-24 xl:w-32 h-8 md:h-10  cursor-pointer border-[0.5px] rounded-md bg-blue-400"
         >
           <div className="text-white m-auto">Logout</div>
         </div>

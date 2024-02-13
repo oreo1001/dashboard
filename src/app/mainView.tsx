@@ -1,3 +1,4 @@
+import { IoCheckmark } from 'react-icons/io5'
 import ImageFrame from './component/imageFrame'
 
 export function MainView1() {
@@ -61,26 +62,51 @@ export function MainView3() {
 }
 export function MainView4() {
   return (
-    <div className="w-full bg-[url('/assets/main2.png')] bg-cover bg-center h-screen">
-      <div className="flex flex-col w-full max-w-[960px] items-center pt-12 pl-5">
-        <div className="flex flex-col items-start justify-start">
+    <>
+      <div className="w-full bg-[url('/assets/main2.png')] bg-cover bg-center h-[700px] flex justify-center">
+        <div className="flex flex-col max-w-[1200px] pl-[100px] pt-[200px] w-full">
           <div className="font-semibold text-2xl text-white">
             Why we have to use ai assistant?
           </div>
-          <div className="font-semibold text-lg pt-12 text-white">
-            간단한 사용법
+          <div className="font-semibold text-lg pt-12 text-white flex flex-row">
+            <IoCheckmark
+              className="text-white rounded-full shadow-lg"
+              size={30}
+            ></IoCheckmark>
+            <div className="pt-1 pl-3"> 간단한 사용법</div>
           </div>
-          <div className="font-semibold text-lg pt-6 text-white">
-            24시간 365일 언제든 메일을 주고받을 수 있어요
+
+          <div className="font-semibold text-lg pt-12 text-white flex flex-row">
+            <IoCheckmark
+              className="text-white rounded-full shadow-lg"
+              size={30}
+            ></IoCheckmark>
+            <div className="pt-1 pl-3">
+              {' '}
+              24시간 365일 언제든 메일을 주고받을 수 있어요
+            </div>
           </div>
-          <div className="font-semibold text-lg pt-6 text-white">
-            비서 고용 금액보다 저렴한 금액으로 이용할 수 있어요
+          <div className="font-semibold text-lg pt-12 text-white flex flex-row">
+            <IoCheckmark
+              className="text-white rounded-full shadow-lg"
+              size={30}
+            ></IoCheckmark>
+            <div className="pt-1 pl-3">
+              {' '}
+              비서 고용 금액보다 저렴한 금액으로 이용할 수 있어요
+            </div>
           </div>
-          <div className="font-semibold text-lg pt-6 text-white">
-            회신을 바로 보내서 빠른 소통이 가능해요
+          <div className="font-semibold text-lg pt-12 text-white flex flex-row">
+            <IoCheckmark
+              className="text-white rounded-full shadow-lg"
+              size={30}
+            ></IoCheckmark>
+            <div className="pt-1 pl-3">
+              회신을 바로 보내서 빠른 소통이 가능해요
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
