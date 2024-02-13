@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom-light':
+          '0 1px 1px rgba(49, 49, 49, 0.1), 0 2px 2px rgba(49, 49, 49, 0.2), 0 2px 2px rgba(49, 49, 49, 0.2), 0 3px 4px #e1e1e1',
+      },
       colors: {
         dark: {
           bg: '#000000',

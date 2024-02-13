@@ -5,7 +5,11 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import ImageFrame from './component/imageFrame'
-import { GoogleButton, GoogleButton2 } from './component/googleButton'
+import {
+  GoogleButton,
+  GoogleButton2,
+  GoogleButton3,
+} from './component/googleButton'
 
 export default function LoginButton() {
   const dispatch = useAppDispatch()
@@ -63,25 +67,14 @@ export default function LoginButton() {
   return (
     <>
       {!profile.isLogin ? (
-        <GoogleButton></GoogleButton>
+        <GoogleButton3></GoogleButton3>
       ) : (
         <div
           onClick={logout}
-          className="flex my-auto w-28 h-10 cursor-pointer border-[0.5px] rounded-md bg-blue-400"
+          className="flex my-auto w-16 sm:w-16 lg:w-20 xl:w-1/3 h-8 md:h-10  cursor-pointer border-[0.5px] rounded-md bg-blue-400"
         >
           <div className="text-white m-auto">Logout</div>
         </div>
-      )}
-      {profile.id ? (
-        <>
-          <div className="pt-5">{profile.id}</div>
-          <div>{profile.email}</div>
-          <div>{profile.name}</div>
-          {/* <div>{profile.picture}</div> */}
-          <ImageFrame src={profile.picture} size={80}></ImageFrame>
-        </>
-      ) : (
-        <div></div>
       )}
     </>
   )

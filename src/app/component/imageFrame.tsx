@@ -46,3 +46,24 @@ export function ImageFrameGrayBorder({ size, src }: ImageFrameProps) {
     </div>
   )
 }
+
+export function ImageButton({ size, src }: ImageFrameProps) {
+  return (
+    <div className="border-1 rounded-md shadow-custom-light">
+      <Image
+        className="p-1"
+        src={src}
+        alt="frame2"
+        width={size}
+        height={size}
+        placeholder="blur"
+        blurDataURL="/assets/placeholder.png"
+        style={{
+          maxWidth: '100%',
+          width: 'auto',
+          height: 'auto',
+        }}
+      />
+    </div>
+  )
+}
