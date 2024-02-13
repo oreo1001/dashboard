@@ -8,6 +8,7 @@ import ImageFrame from './component/imageFrame'
 import { GoogleButton, GoogleButton2 } from './component/googleButton'
 
 export default function LoginButton() {
+  const dispatch = useAppDispatch()
   const profile = useAppSelector(getAuthState)
   const [cookies, setCookie, removeCookie] = useCookies()
 
@@ -16,9 +17,8 @@ export default function LoginButton() {
     removeCookie('access_token')
   }
   useEffect(() => {
-    const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
-    const dispatch = useAppDispatch()
     const sendProfileAPI = async () => {
+      const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
       if (cookies.access_token === undefined) {
         dispatch(reset())
       } else {
@@ -32,7 +32,6 @@ export default function LoginButton() {
     sendProfileAPI()
   }, [cookies.access_token]) // 쿠키가 변경될 때마다 useEffect 실행
   useEffect(() => {
-    const dispatch = useAppDispatch()
     const sendRefreshTokenToBack = async () => {
       if (cookies.refresh_token === undefined) {
         dispatch(reset())
