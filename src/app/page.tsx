@@ -5,6 +5,8 @@ import { MainView1, MainView2, MainView3, MainView4 } from './mainView'
 import { Computer } from './computer'
 import ImageFrame, { ImageButton } from './component/imageFrame'
 import ShortExplain from './shortExplain'
+import Carousel from './customCarousel'
+import CustomCarousel2 from './carousel2'
 
 export default function Main() {
   //const accessToken = cookies().get('access_token') || ''
@@ -29,6 +31,12 @@ export default function Main() {
               <div className="text-white">copyright wonmo</div>
             </div>
           </div>
+        </div>
+        {/* <Carousel
+          components={[MainView1(), MainView2(), MainView3(), MainView4()]}
+        /> */}
+        <div>
+          <CustomCarousel2></CustomCarousel2>
         </div>
       </DarkMode>
     </div>
