@@ -23,7 +23,7 @@ export default function CompletedContent() {
             <div className="font-semibold text-xl">Donna</div>
             <div className="text-md">Nice to e-meet you!</div>
             <div className="text-stone-400">
-              Hello I'm Donna, your e-secretary, please copy me on any...
+              Hello I&apos;m Donna, your e-secretary, please copy me on any...
             </div>
           </div>
         </div>

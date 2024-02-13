@@ -4,16 +4,11 @@ import { getAuthState, reset, setAuth } from '@/redux/slices/authSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
-import { useRouter } from 'next/navigation'
-import GOOGLE_AUTHORIZATION_URL from './component/googleUrl'
 import ImageFrame from './component/imageFrame'
 import { GoogleButton, GoogleButton2 } from './component/googleButton'
 
 export default function LoginButton() {
-  const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
-  const router = useRouter()
   const profile = useAppSelector(getAuthState)
-  const dispatch = useAppDispatch()
   const [cookies, setCookie, removeCookie] = useCookies()
 
   const logout = () => {
@@ -21,6 +16,8 @@ export default function LoginButton() {
     removeCookie('access_token')
   }
   useEffect(() => {
+    const TOKEN_EXPIRE_TIME = 3600 * 500 //(30분)
+    const dispatch = useAppDispatch()
     const sendProfileAPI = async () => {
       if (cookies.access_token === undefined) {
         dispatch(reset())
@@ -35,6 +32,7 @@ export default function LoginButton() {
     sendProfileAPI()
   }, [cookies.access_token]) // 쿠키가 변경될 때마다 useEffect 실행
   useEffect(() => {
+    const dispatch = useAppDispatch()
     const sendRefreshTokenToBack = async () => {
       if (cookies.refresh_token === undefined) {
         dispatch(reset())

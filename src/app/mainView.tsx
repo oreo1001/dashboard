@@ -8,9 +8,9 @@ export function MainView1() {
           For busy people like you
         </div>
         <div className="pt-3 text-md">
-          For the busy person who can't keep track of their schedule Donna knows
-          your schedule, sends and receives emails, and schedules appointments
-          for you.
+          For the busy person who can&apos;t keep track of their schedule Donna
+          knows your schedule, sends and receives emails, and schedules
+          appointments for you.
         </div>
       </div>
       <div className="p-12">
@@ -25,12 +25,12 @@ export function MainView2() {
     <div className="flex flex-row pt-36">
       <div className="w-96 pt-12 pl-5">
         <div className="text-blue-600 font-semibold text-lg">
-          Of course you'll join me, right?
+          Of course you&apos;ll join me, right?
         </div>
         <div className="pt-3 text-md">
-          Donna will send you a second confirmation email to make sure you don't
-          miss it! If the other person accepts, the appointment will be saved to
-          their calendar too, so neither of you will forget.
+          Donna will send you a second confirmation email to make sure you
+          don&apos;t miss it! If the other person accepts, the appointment will
+          be saved to their calendar too, so neither of you will forget.
         </div>
       </div>
       <div className="p-12">
