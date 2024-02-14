@@ -1,17 +1,16 @@
-import ImageFrame from './imageFrame'
-import Image from 'next/image'
+import ImageFrame, { ImageFrameWidth } from './imageFrame'
 
 export function CarouselView({ step, title, description, imgSrc }: any) {
   return (
     <div className="flex flex-row">
-      <div className="w-96 pt-12 xl:pt-16 pl-5 h-full">
-        <div className="flex items-center text-blue-700 font-medium pb-6 xl:pb-12 text-xl xl:text-4xl ">
+      <div className="w-80 md:w-96 pt-10 md:pt-12 xl:pt-16 pl-5 md:pl-10 h-full">
+        <div className="flex items-center text-blue-700 font-medium pb-2 md:pb-6 xl:pb-12 text-sm md:text-xl xl:text-4xl ">
           {step}
         </div>
-        <div className="flex items-center font-semibold text-lg xl:text-2xl">
+        <div className="flex items-center font-semibold text-sm md:text-lg xl:text-2xl">
           {title}
         </div>
-        <div className="pt-3 xl:pt-6 text-md xl:text-xl">{description}</div>
+        <div className="pt-1 md:pt-3 xl:pt-6 text-xs md:text-md xl:text-xl">{description}</div>
       </div>
       <div className="flex p-12 xl:h-[550px] max-w-[600px]">
         <ImageFrame size={300} src={imgSrc}></ImageFrame>
@@ -22,30 +21,17 @@ export function CarouselView({ step, title, description, imgSrc }: any) {
 export function CarouselTest({ step, title, description, imgSrc }: any) {
   return (
     <div className="flex flex-row">
-      <div className="w-96 pt-12 xl:pt-16 pl-5 h-full">
-        <div className="flex items-center text-blue-700 font-medium pb-6 xl:pb-12 text-xl xl:text-4xl ">
+      <div className="w-60 md:w-96 pt-10 md:pt-12 xl:pt-16 pl-5 h-full">
+        <div className="flex items-center text-blue-700 font-medium pb-2 md:pb-6 xl:pb-12 text-sm md:text-xl xl:text-4xl ">
           {step}
         </div>
-        <div className="flex items-center font-semibold text-lg xl:text-2xl">
+        <div className="flex items-center font-semibold text-sm md:text-lg xl:text-2xl">
           {title}
         </div>
-        <div className="pt-3 xl:pt-6 text-md xl:text-xl">{description}</div>
+        <div className="pt-1 md:pt-3 xl:pt-6 text-xs sm:text-md xl:text-xl">{description}</div>
       </div>
-      <div className="flex p-12 xl:w-[550px]">
-        <Image
-          className="rounded-xl"
-          src={imgSrc}
-          alt="frame"
-          width={300}
-          height={300}
-          placeholder="blur"
-          blurDataURL="/assets/placeholder.png"
-          style={{
-            maxHeight: '100%',
-            width: 'auto',
-            height: 'auto',
-          }}
-        />
+      <div className="flex h-20 md:h-64 w-48 md:w-96 md:p-12 mt-24 md:mt-12">
+        <ImageFrameWidth size={300} src={imgSrc}></ImageFrameWidth>
       </div>
     </div>
   )

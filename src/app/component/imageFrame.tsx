@@ -13,12 +13,31 @@ export default function ImageFrame({ size, src }: ImageFrameProps) {
       alt="frame"
       width={size}
       height={size}
+      quality={100}
       placeholder="blur"
       blurDataURL="/assets/placeholder.png"
       style={{
         maxWidth: '100%',
         width: 'auto',
         height: 'auto',
+      }}
+    />
+  )
+}
+export function ImageFrameWidth({ size, src }: ImageFrameProps) {
+  return (
+    <Image
+      className="rounded-xl"
+      src={src}
+      alt="frame"
+      width={size}
+      height={size}
+      quality={100}
+      placeholder="blur"
+      blurDataURL="/assets/placeholder.png"
+      style={{
+        maxHeight: '100%',
+        width: 'auto',
       }}
     />
   )
@@ -33,6 +52,7 @@ export function ImageFrameGrayBorder({ size, src }: ImageFrameProps) {
         alt="frame2"
         width={size}
         height={size}
+        quality={100}
         placeholder="blur"
         blurDataURL="/assets/placeholder.png"
         style={{

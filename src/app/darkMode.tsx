@@ -14,7 +14,7 @@ function DarkMode({ children }: DarkProps) {
   return (
     <div
       id="dark"
-      className={`${isDark ? '!bg-[#2f3537] !text-white border-white' : '!bg-white !text-black'}`}
+      className={`${isDark ? '!bg-[#2f3537] !text-white border-white' : '!bg-[#FBFBFB] !text-black'}`}
     >
       {children}
     </div>

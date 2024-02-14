@@ -21,13 +21,34 @@ export function MainNavbar() {
       <div className="flex h-16 justify-between">
         <button onClick={() => router.push('/')}>
           <div className="flex-shrink-0 flex items-center">
-            {/* <ImageFrame
-              src={'/assets/logo/dona-logo.png'}
-              size={40}
-            ></ImageFrame> */}
-            <span className="ml-4 xl:ml-6 font-sans font-medium text-white text-2xl xl:text-3xl">
-              DONNA
-            </span>
+            <Image
+            className='pl-4'
+      src={'/assets/dona-logo/도나-로고-컬러.png'}
+      alt="frame"
+      width={30}
+      height={30}
+      placeholder="blur"
+      blurDataURL="/assets/placeholder.png"
+      style={{
+        maxWidth: '100%',
+        width: 'auto',
+        height: 'auto',
+      }}
+    />
+             <Image
+             className='pl-4'
+      src={'/assets/dona-logo/도나-텍스트-화이트.png'}
+      alt="frame"
+      width={70}
+      height={20}
+      placeholder="blur"
+      blurDataURL="/assets/placeholder.png"
+      style={{
+        maxWidth: '100%',
+        width: 'auto',
+        height: 'auto',
+      }}
+    />
           </div>
         </button>
         <div className="flex-row md:flex hidden">

@@ -8,10 +8,10 @@ import {
   CarouselView2,
   CarouselView3,
   CarouselView4,
-} from './carouselView'
+} from '../component/carouselView'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { useRouter } from 'next/navigation'
-function CustomCarousel2() {
+function GuideCarousel() {
   const router = useRouter()
   const settings = {
     className: 'relative',
@@ -100,4 +100,4 @@ function CustomCarousel2() {
   )
 }
 
-export default CustomCarousel2
+export default GuideCarousel

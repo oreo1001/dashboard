@@ -6,15 +6,15 @@ import { Computer } from './temp/computer'
 import ImageFrame, { ImageButton } from './component/imageFrame'
 import ShortExplain from './component/shortExplain'
 import Carousel from './temp/customCarousel22'
-import CustomCarousel2 from './component/customCarousel'
+import CustomCarousel2 from './guide/guideCarousel'
 
 export default function Main() {
   //const accessToken = cookies().get('access_token') || ''
   //console.log('access_token 출력 : ',accessToken)
   return (
-    <div className="h-screen min-h-screen">
+    <div className="h-screen min-h-screen"> 
       <DarkMode>
-        <MainContent></MainContent>
+        <MainContent></MainContent> 
         <ShortExplain></ShortExplain>
 
         <div className="pt-[100px] flex flex-col items-center">

@@ -21,7 +21,7 @@ export function MainView({ title, description, imgSrc }: any) {
 export function AssistantView() {
   return (
     <>
-      <div className="w-full bg-[url('/assets/main2.png')] bg-cover bg-center h-96 md:h-[400px] lg:h-[500px] xl:h-[700px] flex justify-center">
+      <div className="w-full bg-[url('/assets/mainBackground2.png')] bg-cover bg-center h-96 md:h-[400px] lg:h-[500px] xl:h-[700px] flex justify-center">
         <div className="flex flex-col max-w-[1200px] xl:pl-[100px] md:pl-[50px] pl-3 xl:pt-[200px] lg:pt-24 pt-16 w-full">
           <div className="font-semibold text-md md:text-lg lg:text-xl xl:text-2xl text-white">
             Why we have to use ai assistant?
