@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -9,18 +9,46 @@ import {
   CarouselView3,
   CarouselView4,
 } from './carouselView'
-
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { useRouter } from 'next/navigation'
 function CustomCarousel2() {
+  const router = useRouter()
   const settings = {
     className: 'relative',
-    dots: true,
-    autoplaySpeed: 10000,
+    dots: false,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    // centerMode: true,
+    infinite: false,
+    autoplay: false,
+    // autoplaySpeed: 10000,
+    centerMode: true,
+    touchMove: false,
+  }
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isMoving, setIsMoving] = useState(false)
+  const sliderRef = useRef<Slider>(null)
+  const previousButton = () => {
+    if (isMoving) return
+    if (currentSlide <= 0) return
+    else {
+      setIsMoving(true)
+      setCurrentSlide(currentSlide - 1)
+      sliderRef.current?.slickGoTo(currentSlide - 1)
+      setTimeout(() => setIsMoving(false), 1000)
+    }
+  }
+  const nextButton = () => {
+    if (isMoving) return
+    if (currentSlide > 3) return
+    else if (currentSlide == 3) {
+      router.replace('/completed')
+    } else {
+      setIsMoving(true)
+      setCurrentSlide(currentSlide + 1)
+      sliderRef.current?.slickGoTo(currentSlide + 1)
+      setTimeout(() => setIsMoving(false), 1000)
+    }
   }
 
   return (
@@ -34,7 +62,7 @@ function CustomCarousel2() {
         </div>
         <div className="text-md">앞으로 복잡한 일정 관리에서 벗어나세요!</div>
       </div>
-      <Slider {...settings} className="flex my-4 h-[450px]">
+      <Slider {...settings} ref={sliderRef} className="flex my-4 h-[450px]">
         <div className="flex items-center ">
           <div className="flex items-center justify-center h-full">
             <CarouselView1></CarouselView1>
@@ -56,6 +84,23 @@ function CustomCarousel2() {
           </div>
         </div>
       </Slider>
+      <div className="flex flex-row justify-center">
+        <div
+          className="border-[1px] shadow-md rounded-full w-6 h-6 flex items-center justify-center"
+          onClick={previousButton}
+        >
+          <IoIosArrowBack />
+        </div>
+        <div className="flex justify-center px-5">
+          <p className="text-lg">{currentSlide + 1} / 4</p>
+        </div>
+        <div
+          className="border-[1px] shadow-md rounded-full w-6 h-6 flex items-center justify-center"
+          onClick={nextButton}
+        >
+          <IoIosArrowForward />
+        </div>
+      </div>
     </div>
   )
 }
