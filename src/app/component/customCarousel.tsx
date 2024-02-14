@@ -51,10 +51,10 @@ function CustomCarousel2() {
     }
   }
   const carouselViews = [
-    <CarouselView1 />,
-    <CarouselView2 />,
-    <CarouselView3 />,
-    <CarouselView4 />,
+    () => <CarouselView1 />,
+    () => <CarouselView2 />,
+    () => <CarouselView3 />,
+    () => <CarouselView4 />,
   ]
 
   return (
@@ -71,10 +71,10 @@ function CustomCarousel2() {
         </div>
       </div>
       <Slider {...settings} ref={sliderRef} className="flex my-4 h-full">
-        {carouselViews.map((carouselView, index) => (
+        {carouselViews.map((CarouselView, index) => (
           <div key={index} className="flex items-center ">
             <div className="flex items-center justify-center h-full">
-              {carouselView}
+              {CarouselView()}
             </div>
           </div>
         ))}

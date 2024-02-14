@@ -1,4 +1,5 @@
 import ImageFrame from './imageFrame'
+import Image from 'next/image'
 
 export function CarouselView({ step, title, description, imgSrc }: any) {
   return (
@@ -12,8 +13,39 @@ export function CarouselView({ step, title, description, imgSrc }: any) {
         </div>
         <div className="pt-3 xl:pt-6 text-md xl:text-xl">{description}</div>
       </div>
-      <div className="flex p-12 xl:h-[550px]">
+      <div className="flex p-12 xl:h-[550px] max-w-[600px]">
         <ImageFrame size={300} src={imgSrc}></ImageFrame>
+      </div>
+    </div>
+  )
+}
+export function CarouselTest({ step, title, description, imgSrc }: any) {
+  return (
+    <div className="flex flex-row">
+      <div className="w-96 pt-12 xl:pt-16 pl-5 h-full">
+        <div className="flex items-center text-blue-700 font-medium pb-6 xl:pb-12 text-xl xl:text-4xl ">
+          {step}
+        </div>
+        <div className="flex items-center font-semibold text-lg xl:text-2xl">
+          {title}
+        </div>
+        <div className="pt-3 xl:pt-6 text-md xl:text-xl">{description}</div>
+      </div>
+      <div className="flex p-12 xl:w-[550px]">
+        <Image
+          className="rounded-xl"
+          src={imgSrc}
+          alt="frame"
+          width={300}
+          height={300}
+          placeholder="blur"
+          blurDataURL="/assets/placeholder.png"
+          style={{
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+          }}
+        />
       </div>
     </div>
   )
@@ -58,13 +90,13 @@ export function CarouselView3() {
 
 export function CarouselView4() {
   return (
-    <CarouselView
+    <CarouselTest
       step="step 4"
       title="구글 캘린더 일정 초대"
       description=" 모든 일정 조율이 끝나면 DONNA가 당신과 상대방 모두에게 구글 캘린더
     일정 초대 메일을 보낼것 입니다. 이를 수락하면 구글 캘린더에 일정이
     등록되고, 도나는 이를 바탕으로 새로운 일정을 만들때 참고하게 될거예요."
       imgSrc="/assets/carousel/carouselImage4.png"
-    ></CarouselView>
+    ></CarouselTest>
   )
 }
