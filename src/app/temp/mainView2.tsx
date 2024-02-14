@@ -1,4 +1,4 @@
-import ImageFrame from './component/imageFrame'
+import ImageFrame from '../component/imageFrame'
 
 export function MainView1() {
   return (

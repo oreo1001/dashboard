@@ -1,4 +1,4 @@
-import ImageFrame, { ImageButton } from './component/imageFrame'
+import ImageFrame, { ImageButton } from '../component/imageFrame'
 
 export function Computer() {
   return (

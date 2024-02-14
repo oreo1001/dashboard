@@ -1,4 +1,4 @@
-import ImageFrame, { ImageButton } from './component/imageFrame'
+import ImageFrame, { ImageButton } from './imageFrame'
 
 export default function ShortExplain() {
   return (
@@ -16,7 +16,7 @@ export default function ShortExplain() {
               size={32}
               src={'/assets/icon/업무시간.png'}
             ></ImageButton>
-            <div className="flex items-center pl-5 ">
+            <div className="flex items-center pl-5 text-xs sm:text-base">
               일정을 생각할 시간조차 없이 바빠요
             </div>
           </div>
@@ -25,19 +25,21 @@ export default function ShortExplain() {
               size={32}
               src={'/assets/icon/스케쥴.png'}
             ></ImageButton>
-            <div className="flex items-center pl-5 ">
+            <div className="flex items-center pl-5 text-xs sm:text-base">
               일정이 너무 많아 정리가 안 돼요!
             </div>
           </div>
           <div className="flex flex-row">
-            <ImageButton size={32} src={'/assets/icon/돈.png'}></ImageButton>
-            <div className="flex items-center pl-5 ">
+            <div className="w-10 sm:w-10">
+              <ImageButton size={32} src={'/assets/icon/돈.png'}></ImageButton>
+            </div>
+            <div className="flex items-center pl-5 text-xs sm:text-base">
               비서를 고용하고 싶지만 가격이 부담돼요
             </div>
           </div>
           <div className="flex flex-row">
             <ImageButton size={32} src={'/assets/icon/시간.png'}></ImageButton>
-            <div className="flex items-center pl-5 ">
+            <div className="flex items-center pl-5 text-xs sm:text-base">
               자동화로 시간을 절약하고 싶어요!
             </div>
           </div>

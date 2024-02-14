@@ -1,5 +1,5 @@
 import { IoCheckmark } from 'react-icons/io5'
-import ImageFrame from './component/imageFrame'
+import ImageFrame from './imageFrame'
 
 export function CarouselView1() {
   return (
@@ -64,8 +64,8 @@ export function CarouselView3() {
         </div>
         <div className="pt-3 text-md">
           DONNA가 당신의 선호 시간대를 파악하였다면 상대방에게 메일을 보내 일정
-          조율을 시작할것 입니다. 만약 상대방이 선약이 있다면 당신의 의견을 듣고
-          다시 조율할 것이니 걱정 마세요.
+          조율을 시작할 것 입니다. 만약 상대방이 선약이 있다면 당신의 의견을
+          듣고 다시 조율할 것이니 걱정 마세요.
         </div>
       </div>
       <div className="p-12">
@@ -91,7 +91,7 @@ export function CarouselView4() {
         <div className="pt-3 text-md">
           모든 일정 조율이 끝나면 DONNA가 당신과 상대방 모두에게 구글 캘린더
           일정 초대 메일을 보낼것 입니다. 이를 수락하면 구글 캘린더에 일정이
-          등록되고, 도나는이를 바탕으로 새로운 일정을 만들때 참고하게 될거예요.
+          등록되고, 도나는 이를 바탕으로 새로운 일정을 만들때 참고하게 될거예요.
         </div>
       </div>
       <div className="p-12">

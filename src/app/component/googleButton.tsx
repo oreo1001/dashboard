@@ -15,7 +15,7 @@ export function GoogleButton3() {
       <div className="my-auto ml-3 md:ml-7 mr-1 w-7 h-7">
         <ImageFrame src={'/assets/logo/google-logo.png'} size={18}></ImageFrame>
       </div>
-      <div className="md:ml-4 ml-2 my-auto flex items-center sm:text-sm md:text-md lg:text-lg">
+      <div className="md:ml-4 ml-2 my-auto flex items-center text-xs md:text-md lg:text-lg">
         Sign up with Google
       </div>
     </div>
