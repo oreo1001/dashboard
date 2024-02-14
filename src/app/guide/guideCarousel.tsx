@@ -60,7 +60,7 @@ function GuideCarousel() {
   return (
     <div className="w-full flex flex-col">
       <div className="flex flex-col justify-center items-center">
-        <div className="text-2xl xl:text-4xl font-semibold">
+        <div className="pt-0 xl:pt-12 text-2xl xl:text-4xl font-semibold">
           도나와 더 편리한 비즈니스 생활을 누리세요!
         </div>
         <div className="text-md xl:text-xl pt-4">
