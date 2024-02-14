@@ -9,13 +9,13 @@ export function GoogleButton3() {
   }
   return (
     <div
-      className="flex flex-row sm:w-48 md:w-56 lg:w-64 h-8 md:h-12 cursor-pointer border-[0.5px] rounded-md bg-white"
+      className="flex flex-row px-3 md:px-5 sm:w-48 md:w-56 lg:w-64 h-8 md:h-12 cursor-pointer border-[0.5px] rounded-md bg-white"
       onClick={handleSignIn}
     >
-      <div className="my-auto ml-3 md:ml-5 mr-1 w-7 h-7">
+      <div className="my-auto w-7 h-7">
         <ImageFrame src={'/assets/logo/google-logo.png'} size={18}></ImageFrame>
       </div>
-      <div className="md:ml-4 ml-2 my-auto flex items-center text-xs sm:text-sm md:text-md lg:text-lg">
+      <div className="ml-1 md:ml-2 xl:ml-3 my-auto flex items-center text-xs sm:text-sm md:text-md lg:text-lg">
         Sign up with Google
       </div>
     </div>

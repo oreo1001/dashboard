@@ -1,7 +1,7 @@
 import DarkMode from './darkMode'
 import { MainNavbar } from './mainNavBar'
 import MainContent from './mainContent'
-import { MainView1, MainView2, MainView3, MainView4 } from './mainView'
+import { AssistantView, MainView } from './mainView'
 import { Computer } from './temp/computer'
 import ImageFrame, { ImageButton } from './component/imageFrame'
 import ShortExplain from './component/shortExplain'
@@ -18,22 +18,38 @@ export default function Main() {
         <ShortExplain></ShortExplain>
 
         <div className="pt-[100px] flex flex-col items-center">
-          <MainView4></MainView4>
+          <AssistantView></AssistantView>
         </div>
         <div className="pt-[100px] flex flex-col items-center">
-          <MainView1></MainView1>
-          <MainView2></MainView2>
-          <MainView3></MainView3>
+          <MainView
+            title="For busy people like you"
+            description="For the busy person who can't keep track of their schedule Donna knows your schedule, sends and receives emails, and schedules appointments for you."
+            imgSrc="/assets/mainImage1.png"
+          />
+          <MainView
+            title="Of course you'll join me, right?"
+            description="Donna will send you a second confirmation email to make sure you don't miss it! If the other person accepts, the appointment will be saved to their calendar too, so neither of you will forget."
+            imgSrc="/assets/mainImage2.png"
+          />
+          <MainView
+            title="You can check your schedule in the calendar"
+            description="Events that you accept an invitation to are automatically added to your Google Calendar, saving you the trouble of adding them to your calendar each time."
+            imgSrc="/assets/mainImage3.png"
+          />
           {/* <div className="mt-48 w-screen h-[50px] flex justify-center items-center gradient-animated bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
             <div className="w-[1200px] flex flex-col">
               <div className="text-white">privacy policy</div>
               <div className="text-white">copyright wonmo</div>
             </div>
           </div> */}
-          <div className="max-w-[1200px] w-full mt-24 h-[100px] flex flex-col justify-start pl-6">
-            <div className="text-blue-400 text-lg">Privacy policy</div>
-            <div className="text-sm pt-3">
-              Copyright © 2024 Wonmo, INC. All rights reserved{' '}
+          <div className="w-full bg-[#15203B]">
+            <div className="mx-12 h-[200px] flex flex-col justify-center item-start pl-6 pb-5">
+              <div className=" text-white text-lg xl:text-xl">
+                Privacy policy
+              </div>
+              <div className=" text-white text-sm xl:text-md pt-3">
+                Copyright © 2024 Wonmo, INC. All rights reserved
+              </div>
             </div>
           </div>
         </div>

@@ -1,66 +1,24 @@
 import { IoCheckmark } from 'react-icons/io5'
 import ImageFrame from './component/imageFrame'
 
-export function MainView1() {
+export function MainView({ title, description, imgSrc }: any) {
   return (
-    <div className="flex flex-row">
-      <div className="flex flex-col h-full w-96 pt-12 pl-5">
-        <div className="flex items-center font-semibold text-lg">
-          For busy people like you
+    <div className="flex flex-col md:flex-row justify-between py-0 md:py-10">
+      <div className="flex flex-col w-96 xl:w-[470px] h-48 md:h-96 justify-center">
+        <div className="font-semibold text-lg sm:text-lg md:text-lg xl:text-2xl">
+          {title}
         </div>
-        <div className="pt-3 text-md">
-          For the busy person who can&apos;t keep track of their schedule Donna
-          knows your schedule, sends and receives emails, and schedules
-          appointments for you.
+        <div className="pt-2 md:pt-4 xl:pt-8 text-xs sm:text-sm md:text-md xl:text-lg">
+          {description}
         </div>
       </div>
-      <div className="p-12">
-        <ImageFrame size={300} src={'/assets/mainImage1.png'}></ImageFrame>
+      <div className="flex flex-col my-[50px] md:my-0 pt-0 md:pt-[200px] w-64 md:w-96 xl:w-[400px] h-32 md:h-48 xl:h-[200px] justify-center ml-0 md:ml-12 lg:ml-16 xl:ml-36">
+        <ImageFrame size={300} src={imgSrc}></ImageFrame>
       </div>
     </div>
   )
 }
-
-export function MainView2() {
-  return (
-    <div className="flex flex-row pt-36">
-      <div className="w-96 pt-12 pl-5">
-        <div className="font-semibold text-lg">
-          Of course you&apos;ll join me, right?
-        </div>
-        <div className="pt-3 text-md">
-          Donna will send you a second confirmation email to make sure you
-          don&apos;t miss it! If the other person accepts, the appointment will
-          be saved to their calendar too, so neither of you will forget.
-        </div>
-      </div>
-      <div className="p-12">
-        <ImageFrame size={300} src={'/assets/mainImage2.png'}></ImageFrame>
-      </div>
-    </div>
-  )
-}
-
-export function MainView3() {
-  return (
-    <div className="flex flex-row pt-36">
-      <div className="w-96 pt-12 pl-5">
-        <div className="font-semibold text-lg">
-          You can check your schedule in the calendar
-        </div>
-        <div className="pt-3 text-md">
-          Events that you accept an invitation to are automatically added to
-          your Google Calendar, saving you the trouble of adding them to your
-          calendar each time.
-        </div>
-      </div>
-      <div className="p-12">
-        <ImageFrame size={300} src={'/assets/mainImage3.png'}></ImageFrame>
-      </div>
-    </div>
-  )
-}
-export function MainView4() {
+export function AssistantView() {
   return (
     <>
       <div className="w-full bg-[url('/assets/main2.png')] bg-cover bg-center h-96 md:h-[400px] lg:h-[500px] xl:h-[700px] flex justify-center">

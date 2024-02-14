@@ -7,22 +7,20 @@ interface ImageFrameProps {
 
 export default function ImageFrame({ size, src }: ImageFrameProps) {
   return (
-    <div>
-      <Image
-        className="rounded-xl"
-        src={src}
-        alt="frame"
-        width={size}
-        height={size}
-        placeholder="blur"
-        blurDataURL="/assets/placeholder.png"
-        style={{
-          maxWidth: '100%',
-          width: 'auto',
-          height: 'auto',
-        }}
-      />
-    </div>
+    <Image
+      className="rounded-xl"
+      src={src}
+      alt="frame"
+      width={size}
+      height={size}
+      placeholder="blur"
+      blurDataURL="/assets/placeholder.png"
+      style={{
+        maxWidth: '100%',
+        width: 'auto',
+        height: 'auto',
+      }}
+    />
   )
 }
 
@@ -49,21 +47,20 @@ export function ImageFrameGrayBorder({ size, src }: ImageFrameProps) {
 
 export function ImageButton({ size, src }: ImageFrameProps) {
   return (
-    <div className="border-1 rounded-md shadow-custom-light">
-      <Image
-        className="p-1"
-        src={src}
-        alt="frame2"
-        width={size}
-        height={size}
-        placeholder="blur"
-        blurDataURL="/assets/placeholder.png"
-        style={{
-          maxWidth: '100%',
-          width: 'auto',
-          height: 'auto',
-        }}
-      />
-    </div>
+    <Image
+      className="p-1 border-1 rounded-md shadow-custom-light"
+      src={src}
+      alt="frame2"
+      width={size}
+      height={size}
+      layout="responsive"
+      placeholder="blur"
+      blurDataURL="/assets/placeholder.png"
+      style={{
+        maxWidth: '100%',
+        width: 'auto',
+        height: 'auto',
+      }}
+    />
   )
 }
