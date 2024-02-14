@@ -5,7 +5,7 @@ export default function GuidePage() {
   return (
     <div className="h-screen">
       <DarkMode>
-        <div className="pb-24 flex flex-col justify-center items-center min-h-screen">
+        <div className="flex flex-col justify-center items-center min-h-screen">
           <CustomCarousel></CustomCarousel>
         </div>
       </DarkMode>

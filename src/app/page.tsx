@@ -43,7 +43,7 @@ export default function Main() {
             </div>
           </div> */}
           <div className="w-full bg-[#15203B]">
-            <div className="mx-12 h-[200px] flex flex-col justify-center item-start pl-6 pb-5">
+            <div className="mx-12 h-[200px] flex flex-col justify-center item-start pl-2 md:pl-6 pb-5">
               <div className=" text-white text-lg xl:text-xl">
                 Privacy policy
               </div>

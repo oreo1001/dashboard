@@ -50,55 +50,50 @@ function CustomCarousel2() {
       setTimeout(() => setIsMoving(false), 1000)
     }
   }
+  const carouselViews = [
+    <CarouselView1 />,
+    <CarouselView2 />,
+    <CarouselView3 />,
+    <CarouselView4 />,
+  ]
 
   return (
     <div className="w-full flex flex-col">
       <div className="flex flex-col justify-center items-center">
-        <div className="text-2xl font-semibold">
+        <div className="text-2xl xl:text-4xl font-semibold">
           도나와 더 편리한 비즈니스 생활을 누리세요!
         </div>
-        <div className="text-md pt-4">
+        <div className="text-md xl:text-xl pt-4">
           도나는 당신의 스케쥴을 조율하여 일정을 관리합니다.
         </div>
-        <div className="text-md">앞으로 복잡한 일정 관리에서 벗어나세요!</div>
+        <div className="text-md xl:text-xl">
+          앞으로 복잡한 일정 관리에서 벗어나세요!
+        </div>
       </div>
-      <Slider {...settings} ref={sliderRef} className="flex my-4 h-[450px]">
-        <div className="flex items-center ">
-          <div className="flex items-center justify-center h-full">
-            <CarouselView1></CarouselView1>
+      <Slider {...settings} ref={sliderRef} className="flex my-4 h-full">
+        {carouselViews.map((carouselView, index) => (
+          <div key={index} className="flex items-center ">
+            <div className="flex items-center justify-center h-full">
+              {carouselView}
+            </div>
           </div>
-        </div>
-        <div className="flex items-center ">
-          <div className="flex items-center justify-center h-full">
-            <CarouselView2></CarouselView2>
-          </div>
-        </div>
-        <div className="flex items-center ">
-          <div className="flex items-center justify-center h-full">
-            <CarouselView3></CarouselView3>
-          </div>
-        </div>
-        <div className="flex items-center ">
-          <div className="flex items-center justify-center h-full">
-            <CarouselView4></CarouselView4>
-          </div>
-        </div>
+        ))}
       </Slider>
       <div className="flex flex-row justify-center">
         <div
-          className="border-[1px] shadow-md rounded-full w-6 h-6 flex items-center justify-center"
+          className="border-[1px] shadow-md rounded-full w-6 xl:w-12 h-6 xl:h-12 flex items-center justify-center"
           onClick={previousButton}
         >
-          <IoIosArrowBack />
+          <IoIosArrowBack className="xl:w-6 xl:h-6" />
         </div>
-        <div className="flex justify-center px-5">
-          <p className="text-lg">{currentSlide + 1} / 4</p>
+        <div className="flex justify-center px-5 xl:px-10 items-center ">
+          <p className="text-lg xl:text-xl">{currentSlide + 1} / 4</p>
         </div>
         <div
-          className="border-[1px] shadow-md rounded-full w-6 h-6 flex items-center justify-center"
+          className="border-[1px] shadow-md rounded-full w-6 xl:w-12 h-6 xl:h-12 flex items-center justify-center"
           onClick={nextButton}
         >
-          <IoIosArrowForward />
+          <IoIosArrowForward className="xl:w-6 xl:h-6" />
         </div>
       </div>
     </div>
