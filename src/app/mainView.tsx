@@ -4,7 +4,7 @@ import ImageFrame from './component/imageFrame'
 export function MainView({ title, description, imgSrc }: any) {
   return (
     <div className="flex flex-col md:flex-row justify-between py-0 md:py-10">
-      <div className="flex flex-col w-96 xl:w-[470px] h-48 md:h-96 justify-center">
+      <div className="flex flex-col w-96 sm:w-[500px] md:w-96 xl:w-[470px] h-24 md:h-96 justify-center">
         <div className="font-semibold text-lg sm:text-lg md:text-lg xl:text-2xl">
           {title}
         </div>
@@ -12,7 +12,7 @@ export function MainView({ title, description, imgSrc }: any) {
           {description}
         </div>
       </div>
-      <div className="flex flex-col my-[50px] md:my-0 pt-0 md:pt-[200px] w-64 md:w-96 xl:w-[400px] h-32 md:h-48 xl:h-[200px] justify-center ml-0 md:ml-12 lg:ml-16 xl:ml-36">
+      <div className="flex flex-col my-[50px] md:my-0 pt-0 md:pt-[200px] w-full md:w-96 xl:w-[400px] h-full md:h-48 xl:h-[200px] justify-center ml-0 md:ml-12 lg:ml-16 xl:ml-36">
         <ImageFrame size={300} src={imgSrc}></ImageFrame>
       </div>
     </div>
