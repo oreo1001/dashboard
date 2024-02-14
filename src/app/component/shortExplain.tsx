@@ -20,10 +20,10 @@ export default function ShortExplain() {
         더 편한 비즈니스를 원하시나요? 도나를 추천드려요!
       </div>
       <div className="flex flex-row justify-center">
-        <div className="w-64 md:w-84 lg:w-[400px] xl:w-[500px] h-64 md:h-84 lg:h-[400px] xl:h-[500px] pl-5 flex">
+        <div className="w-64 md:w-84 lg:w-[400px] xl:w-[500px] h-64 md:h-84 lg:h-[400px] xl:h-[450px] pl-5 flex">
           <ImageFrame size={400} src={'/assets/mainImage1.png'}></ImageFrame>
         </div>
-        <div className="pl-8 md:pl-16 xl:pl-24 flex flex-col justify-between pr-5 pb-5">
+        <div className="pl-8 md:pl-16 lg:pl-20 xl:pl-24 flex flex-col justify-between pr-5 pb-5">
           <ImageButtonBlock
             src="/assets/icon/업무시간.png"
             text="일정을 생각할 시간조차 없이 바빠요"
