@@ -11,8 +11,8 @@ export default function CompletedContent() {
         className=" bg-blue-400 text-white rounded-full shadow-lg"
         size={100}
       ></IoCheckmark>
-      <div className="mt-14 text-2xl md:text-4xl font-semibold text-center px-3">
-        Your Donna E-mail has been issued!
+      <div className="mt-14 text-xl md:text-3xl font-semibold text-center px-3">
+        Your Donna E-mail has been issued by heinz@wonmo.net!
       </div>
       <div className="mt-8 flex flex-row border-[2px] border-stone-200 rounded-xl shadow-sm">
         <div className="flex">
@@ -29,13 +29,15 @@ export default function CompletedContent() {
         </div>
       </div>
       <div className="flex flex-row">
-        <div
-          className="pt-8 text-xl md:text-2xl text-stone-500"
-        >
+        <div className="pt-8 text-xl md:text-2xl text-stone-500">
           Check your&nbsp;
         </div>
-        <div  onClick={() => router.push('https://mail.google.com/mail/u/0/#inbox')}
-          className="cursor-pointer pt-8 text-xl md:text-2xl text-blue-400 underline decoration-blue-400 underline-offset-8">Gmail</div>
+        <div
+          onClick={() => router.push('https://mail.google.com/mail/u/0/#inbox')}
+          className="cursor-pointer pt-8 text-xl md:text-2xl text-blue-400 underline decoration-blue-400 underline-offset-8"
+        >
+          Gmail
+        </div>
       </div>
     </div>
   )
