@@ -32,8 +32,7 @@ export function AssistantView() {
               size={30}
             ></IoCheckmark>
             <div className="pl-3 text-xs md:text-sm lg:text-base xl:text-lg">
-              {' '}
-              간단한 사용법
+              Tailored to your preferences
             </div>
           </div>
 
@@ -43,7 +42,7 @@ export function AssistantView() {
               size={30}
             ></IoCheckmark>
             <div className="pt-1 pl-3 text-xs md:text-sm lg:text-base xl:text-lg">
-              24시간 365일 언제든 메일을 주고받을 수 있어요
+              Send emails all day long
             </div>
           </div>
           <div className="font-semibold pt-5 md:pt-8 xl:pt-12 text-white flex flex-row">
@@ -52,10 +51,10 @@ export function AssistantView() {
               size={30}
             ></IoCheckmark>
             <div className="pt-1 pl-3 text-xs md:text-sm lg:text-base xl:text-lg">
-              비서 고용 금액보다 저렴한 금액으로 이용할 수 있어요
+              Reliable and Trustworthy
             </div>
           </div>
-          <div className="font-semibold pt-5 md:pt-8 xl:pt-12 text-white flex flex-row">
+          {/* <div className="font-semibold pt-5 md:pt-8 xl:pt-12 text-white flex flex-row">
             <IoCheckmark
               className="text-white rounded-full shadow-lg h-4 md:h-8"
               size={30}
@@ -63,7 +62,7 @@ export function AssistantView() {
             <div className="pt-1 pl-3 text-xs md:text-sm lg:text-base xl:text-lg">
               회신을 바로 보내서 빠른 소통이 가능해요
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

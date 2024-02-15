@@ -61,14 +61,14 @@ function GuideCarousel() {
     <div className="w-full flex flex-col">
       <div className="flex flex-col justify-center items-center">
         <div className="pt-0 xl:pt-12 text-2xl xl:text-4xl font-semibold">
-          도나와 더 편리한 비즈니스 생활을 누리세요!
+          Just four steps away from having the world of Dona!
         </div>
-        <div className="text-md xl:text-xl pt-4">
+        {/* <div className="text-md xl:text-xl pt-4">
           도나는 당신의 스케쥴을 조율하여 일정을 관리합니다.
-        </div>
-        <div className="text-md xl:text-xl">
+        </div> */}
+        {/* <div className="text-md xl:text-xl">
           앞으로 복잡한 일정 관리에서 벗어나세요!
-        </div>
+        </div> */}
       </div>
       <Slider {...settings} ref={sliderRef} className="flex my-4 h-full">
         {carouselViews.map((CarouselView, index) => (

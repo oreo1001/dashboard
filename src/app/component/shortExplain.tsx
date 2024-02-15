@@ -16,8 +16,9 @@ function ImageButtonBlock({ src, text }: any) {
 export default function ShortExplain() {
   return (
     <div className="flex flex-col">
-      <div className="flex px-4 font-semibold text-base md:text-2xl xl:text-4xl py-12 md:py-24 xl:py-36 justify-center text-center">
-        더 편한 비즈니스를 원하시나요? 도나를 추천드려요!
+      <div className="flex flex-col px-4 font-semibold text-base md:text-2xl xl:text-4xl py-12 md:py-24 xl:py-36 justify-center text-center">
+        <div>Stressed due to emailing back-and-forth?</div>
+        <div className="pt-2">Donna is a perfect solution</div>
       </div>
       <div className="flex flex-row justify-center">
         <div className="w-64 md:w-84 lg:w-[400px] xl:w-[500px] h-64 md:h-84 lg:h-[400px] xl:h-[450px] pl-5 flex">
