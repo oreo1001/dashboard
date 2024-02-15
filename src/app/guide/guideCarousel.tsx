@@ -61,7 +61,7 @@ function GuideCarousel() {
     <div className="w-full flex flex-col">
       <div className="flex flex-col justify-center items-center">
         <div className="pt-0 xl:pt-12 text-2xl xl:text-4xl font-semibold">
-          Just four steps away from having the world of Dona!
+          Just four steps away from having the world of Donna!
         </div>
         {/* <div className="text-md xl:text-xl pt-4">
           도나는 당신의 스케쥴을 조율하여 일정을 관리합니다.
