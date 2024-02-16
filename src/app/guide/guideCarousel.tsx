@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -11,7 +11,19 @@ import {
 } from '../component/carouselView'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { useRouter } from 'next/navigation'
+import { useAppDispatch } from '@/redux/hooks'
+import { useCookies } from 'react-cookie'
+import { sendProfileAPI, sendRefreshTokenToBack } from './loginFunction'
 function GuideCarousel() {
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    sendProfileAPI(dispatch, cookies)
+  }, [])
+  useEffect(() => {
+    sendRefreshTokenToBack(dispatch, cookies)
+  }, [cookies.refresh_token]) // 쿠키가 변경될 때마다 useEffect 실행
+
   const router = useRouter()
   const settings = {
     className: 'relative',
