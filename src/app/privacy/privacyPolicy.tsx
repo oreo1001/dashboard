@@ -1,6 +1,7 @@
 'use client'
 import Def from './def'
 import CustomList from './customList'
+import Link from 'next/link'
 
 export default function PrivacyPolicy() {
   return (
@@ -73,6 +74,75 @@ export default function PrivacyPolicy() {
             title="THE USER"
             content="is the individual using Donna. The User corresponds to the Data Subject, who is the subject of Personal Data."
           ></Def>
+        </div>
+        <div>
+          <div className="pt-10 text-2xl font-semibold">
+            Google User Data and Limited Use Disclosure
+          </div>
+          <div className="pt-4 text-lg">
+            Our Service’s use and transfer to any other app of information
+            received from Google APIs will adhere to the&nbsp;
+            <Link
+              href={
+                'https://developers.google.com/terms/api-services-user-data-policy'
+              }
+              className="text-blue-400 underline underline-offset-1"
+            >
+              Google API Services User Data Policy
+            </Link>
+            , including the Limited Use requirements.
+          </div>
+          <div className="pt-4 text-lg">
+            We respect and acknowledge the&nbsp;
+            <Link
+              href={
+                'https://developers.google.com/terms/api-services-user-data-policy'
+              }
+              className="text-blue-400 underline underline-offset-1"
+            >
+              Google API Services User Data Policy
+            </Link>
+            &nbsp; and affirm our commitment to comply with all its
+            requirements, ensuring the privacy and protection of user data
+            obtained via Google APIs.
+          </div>
+        </div>
+        <div>
+          <div className="pt-10 text-2xl font-semibold">
+            Accessing, using, storing, and sharing Google User data
+          </div>
+          <div className="text-lg pt-4">
+            This Service uses the Google Calendar API to access your calendar
+            data. Our main goal is to help you manage your schedule effectively,
+            identify empty appointments, and make appointments with others.
+          </div>
+          <div className="list-decimal text-lg pt-4">
+            <CustomList
+              title="Data access:"
+              descriptionList={[
+                'When you sign in with your Google account to use our Service, we access your Google Calendar data with your consent. This access is limited to reading your calendar events.',
+              ]}
+            />
+            <CustomList
+              title="Data Use:"
+              descriptionList={[
+                'We use your calendar data to understand your free time and to help you schedule appointments with others. This data is used to provide the functionality of the Service and is not used for marketing or advertising purposes.',
+              ]}
+            />
+            <CustomList
+              title="Data storage:"
+              descriptionList={[
+                'Your calendar data is only stored for as long as necessary to provide the Service. After this period, the data is securely deleted.',
+              ]}
+            />
+            <CustomList
+              title="Data Sharing:"
+              descriptionList={[
+                'We do not share your personal data with third parties, except on a limited basis where required by law or with external service providers for the Service.',
+                'For more information, see the following Information Collection and Use with Third-Parties topics.',
+              ]}
+            />
+          </div>
         </div>
         <div>
           <div className="pt-10 text-2xl font-semibold">
