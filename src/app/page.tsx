@@ -8,7 +8,7 @@ import { ShortExplain2 } from './component/shortExplain'
 import Carousel from './temp/customCarousel22'
 import CustomCarousel2 from './guide/guideCarousel'
 import Footer from './footer'
-import CCDonna from './ccDonna'
+import CCDonna, { CDonna } from './ccDonna'
 
 export default function Main() {
   //const accessToken = cookies().get('access_token') || ''
@@ -17,11 +17,14 @@ export default function Main() {
     <div className="h-screen min-h-screen">
       <DarkMode>
         <MainContent></MainContent>
-        <CCDonna></CCDonna>
+        {/* <CCDonna></CCDonna> */}
+        <CDonna></CDonna>
         <ShortExplain2></ShortExplain2>
+
         <div className="mt-[100px] flex flex-col px-4 font-semibold text-xl md:text-2xl xl:text-4xl py-12 md:py-24 xl:py-28 justify-center text-center">
           <div>Following these steps and meet Donna!</div>
         </div>
+
         <div className="flex flex-col items-center">
           <MainViewColor
             num="1"

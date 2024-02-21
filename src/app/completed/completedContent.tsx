@@ -15,15 +15,19 @@ export default function CompletedContent() {
           size={100}
         ></IoCheckmark>
         <div className="mt-14 text-xl md:text-3xl font-semibold text-center px-3">
-          Your Donna E-mail has been issued by heinz@wonmo.net!
+          Your Donna E-mail has been issued!
         </div>
         <div className="mt-8 flex flex-row border-[2px] border-stone-200 rounded-xl shadow-sm">
           <div className="flex">
-            <div className="flex justify-center items-center ml-5 my-auto w-10 h-10 md:w-14 md:h-14 rounded-full bg-cyan-200">
-              <div className="text-2xl md:text-3xl">D</div>
+            <div className="flex justify-center items-center ml-5 my-auto w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#4c27ad]">
+              <div className="text-2xl md:text-3xl text-white font-medium">
+                D
+              </div>
             </div>
             <div className="py-3 flex flex-col mx-3 mr-5">
-              <div className="font-semibold text-xl">Donna</div>
+              <div className="font-semibold text-xl">
+                Donna(heinz@wonmo.net!)
+              </div>
               <div className="text-md">Nice to e-meet you!</div>
               <div className="text-stone-400">
                 Hello I&apos;m Donna, your e-secretary, please copy me on any...
