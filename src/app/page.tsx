@@ -29,7 +29,7 @@ export default function Main() {
             num="1"
             title="Add Donna to the CC"
             description="When scheduling with someone, please include Donna's email address in the CC when sending the email"
-            imgSrc="/assets/carousel/CarouselImage1.png"
+            imgSrc="/assets/carousel/carouselImage1.png"
             color="bg-[#E7EFFF]"
           ></MainViewColor>
           <MainViewColor
@@ -37,7 +37,7 @@ export default function Main() {
             title="Donna will ask for you preference & approval with Google Chat"
             description="Please check your Google Chat. Donna will ask for your preference, and ask for your approval
       when she finds the right time slot for the meeting."
-            imgSrc="/assets/carousel/CarouselImage2.png"
+            imgSrc="/assets/carousel/carouselImage2.png"
             color="bg-[#E7E7FF]"
           ></MainViewColor>
           <MainViewColor
@@ -45,14 +45,14 @@ export default function Main() {
             title="Donna will send an email to schedule the meeting"
             description="Once Donna finds the right time slot for the meeting,
             Donna will ask for the availability themselves."
-            imgSrc="/assets/carousel/CarouselImage3.png"
+            imgSrc="/assets/carousel/carouselImage3.png"
             color="bg-[#EFE7FF]"
           ></MainViewColor>
           <MainViewColor
             num="4"
             title="Send Google Invite"
             description="Once the meeting is scheduled, a Google Calendar invite will be sent."
-            imgSrc="/assets/carousel/CarouselImage4.png"
+            imgSrc="/assets/carousel/carouselImage4.png"
             color="bg-[#EFEFFF]"
           ></MainViewColor>
           {/* <MainView

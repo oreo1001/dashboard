@@ -1,5 +1,6 @@
 import { IoCheckmark } from 'react-icons/io5'
 import ImageFrame from './component/imageFrame'
+import Image from 'next/image'
 
 export function MainView({ title, description, imgSrc }: any) {
   return (
