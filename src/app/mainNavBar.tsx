@@ -22,36 +22,36 @@ export function MainNavbar() {
         <button onClick={() => router.push('/')}>
           <div className="flex-shrink-0 flex items-center">
             <Image
-            className='pl-4'
-      src={'/assets/dona-logo/도나-로고-컬러.png'}
-      alt="frame"
-      width={30}
-      height={30}
-      placeholder="blur"
-      blurDataURL="/assets/placeholder.png"
-      style={{
-        maxWidth: '100%',
-        width: 'auto',
-        height: 'auto',
-      }}
-    />
-             <Image
-             className='pl-4'
-      src={'/assets/dona-logo/도나-텍스트-화이트.png'}
-      alt="frame"
-      width={70}
-      height={20}
-      placeholder="blur"
-      blurDataURL="/assets/placeholder.png"
-      style={{
-        maxWidth: '100%',
-        width: 'auto',
-        height: 'auto',
-      }}
-    />
+              className="pl-4"
+              src={'/assets/dona-logo/도나-로고-컬러.png'}
+              alt="frame"
+              width={30}
+              height={30}
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.png"
+              style={{
+                maxWidth: '100%',
+                width: 'auto',
+                height: 'auto',
+              }}
+            />
+            <Image
+              className="pl-4"
+              src={'/assets/dona-logo/도나-텍스트-화이트.png'}
+              alt="frame"
+              width={70}
+              height={20}
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.png"
+              style={{
+                maxWidth: '100%',
+                width: 'auto',
+                height: 'auto',
+              }}
+            />
           </div>
         </button>
-        <div className="flex-row md:flex hidden">
+        <div className="flex flex-row items-center">
           {/* <Switcher /> */}
           {!profile.isLogin ? (
             <div className="flex ml-10 my-auto w-28 h-10 cursor-pointer rounded-md bg-blue-400">
@@ -60,22 +60,11 @@ export function MainNavbar() {
               </div>
             </div>
           ) : (
-            <>
-              {/* <Image
-                className="ml-10 my-2 rounded-full"
-                src={profile.picture}
-                alt="frame"
-                width={30}
-                height={30}
-                placeholder="blur"
-                blurDataURL="/assets/placeholder.png"
-                style={{
-                  maxWidth: '100%',
-                  width: 'auto',
-                  height: 'auto',
-                }}
-              /> */}
-            </>
+            <div className="cursor-pointer flex justify-center items-center w-12 h-12 rounded-full bg-blue-500">
+              <div className="text-xl md:text-2xl text-white font-medium flex">
+                {profile.name.substring(1, 2)}
+              </div>
+            </div>
           )}
         </div>
       </div>
