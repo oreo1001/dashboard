@@ -71,17 +71,10 @@ function GuideCarousel() {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="flex flex-col justify-center items-center">
-        <div className="pt-0 xl:pt-12 text-2xl xl:text-4xl font-semibold">
-          Just four steps away from having the world of Donna!
-        </div>
-        {/* <div className="text-md xl:text-xl pt-4">
-          도나는 당신의 스케쥴을 조율하여 일정을 관리합니다.
-        </div> */}
-        {/* <div className="text-md xl:text-xl">
-          앞으로 복잡한 일정 관리에서 벗어나세요!
-        </div> */}
+      <div className="flex flex-col justify-center items-center text-center pt-0 xl:pt-12 text-lg sm:text-2xl xl:text-4xl font-semibold">
+        Just four steps away from having the world of Donna!
       </div>
+
       <Slider {...settings} ref={sliderRef} className="flex my-4 h-full">
         {carouselViews.map((CarouselView, index) => (
           <div key={index} className="flex items-center ">

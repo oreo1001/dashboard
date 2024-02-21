@@ -18,6 +18,28 @@ export function MainView({ title, description, imgSrc }: any) {
     </div>
   )
 }
+export function MainViewColor({ num, title, description, imgSrc, color }: any) {
+  return (
+    <div
+      className={`flex flex-col md:flex-row justify-between mb-20 py-5 md:py-10 rounded-3xl ${color} px-10 sm:px-12 md:px-14 lg:px-20`}
+    >
+      <div className="flex flex-col w-96 sm:w-[500px] md:w-96 xl:w-[470px] h-24 md:h-96 pt-0 md:pt-10">
+        <div className="font-semibold text-lg sm:text-lg md:text-lg xl:text-2xl text-blue-600">
+          step {num}
+        </div>
+        <div className="pt-2 md:pt-4 xl:pt-8 font-semibold text-lg sm:text-lg md:text-lg xl:text-2xl">
+          {title}
+        </div>
+        <div className="pt-1 md:pt-2 xl:pt-4 text-xs sm:text-sm md:text-md xl:text-lg">
+          {description}
+        </div>
+      </div>
+      <div className="flex flex-col my-[50px] md:my-0 pt-0 md:pt-[200px] w-full md:w-96 xl:w-[400px] h-full md:h-48 xl:h-[200px] justify-center ml-0 md:ml-12 lg:ml-16 xl:ml-36">
+        <ImageFrame size={300} src={imgSrc}></ImageFrame>
+      </div>
+    </div>
+  )
+}
 export function AssistantView() {
   return (
     <>
