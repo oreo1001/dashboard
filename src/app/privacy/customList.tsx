@@ -15,3 +15,16 @@ export default function CustomList({ title, descriptionList }: ListProps) {
     </li>
   )
 }
+
+export function CustomList2({ title, descriptionList }: ListProps) {
+  return (
+    <div className="pt-3">
+      <div className="font-semibold text-xl pb-3">{title}</div>
+      {descriptionList.map((description, index) => (
+        <div className="pb-4" key={index}>
+          {description}
+        </div>
+      ))}
+    </div>
+  )
+}
