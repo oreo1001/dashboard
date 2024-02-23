@@ -27,7 +27,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
   const tokens = await getRefreshTokenFromAuthCode(authCode)
   cookies().set('access_token', tokens.accessToken)
   cookies().set('refresh_token', tokens.refreshToken)
-  redirect('/guide')
+  redirect('/completed')
 }
 
 // export async function POST(req: Request, res: NextResponse) {

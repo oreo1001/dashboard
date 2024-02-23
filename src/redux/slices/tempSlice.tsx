@@ -2,16 +2,18 @@
 import { RootState } from '../store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-type CounterState = {
+type TempState = {
   value: number
+  userButton: boolean
 }
 
-const initialState: CounterState = {
+const initialState: TempState = {
   value: 0,
+  userButton: false,
 }
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const tempSlice = createSlice({
+  name: 'temp',
   initialState,
   reducers: {
     reset: () => initialState,
@@ -27,6 +29,9 @@ export const counterSlice = createSlice({
     decrementByAmount: (state, action: PayloadAction<number>) => {
       state.value -= action.payload
     },
+    clickUserButton: (state, action: PayloadAction<boolean>) => {
+      state.userButton = action.payload
+    },
   },
 })
 
@@ -36,6 +41,8 @@ export const {
   decrement,
   decrementByAmount,
   reset,
-} = counterSlice.actions
-export const selectValue = (state: RootState) => state.counter.value
-export default counterSlice.reducer
+  clickUserButton,
+} = tempSlice.actions
+export const selectValue = (state: RootState) => state.temp.value
+export const selectUserButton = (state: RootState) => state.temp.userButton
+export default tempSlice.reducer

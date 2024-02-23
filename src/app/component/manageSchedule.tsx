@@ -2,17 +2,17 @@ import Image from 'next/image'
 const items = [
   {
     imageUrl: '/assets/carousel/videoCalls.png',
-    bgColor: '#E7EFFF',
+    bgColor: 'bg-[#E7EFFF]',
     title: 'Video Calls',
   },
   {
     imageUrl: '/assets/carousel/carouselImage4.png',
-    bgColor: '#D2E1FF',
+    bgColor: 'bg-[#D2E1FF]',
     title: 'Coffee Chat',
   },
   {
     imageUrl: '/assets/dinner1.png',
-    bgColor: '#E7E8FF',
+    bgColor: 'bg-[#E7E8FF]',
     title: 'Meal Appointment',
   },
 ]
@@ -50,7 +50,7 @@ export const GridItem: React.FC<GridItemProps> = ({
 }) => (
   <div className="flex flex-col shadow-custom-light rounded-3xl">
     <div
-      className={`rounded-t-3xl relative h-24 sm:h-32 md:h-48 lg:h-64 xl:h-80 bg-[${bgColor}]`}
+      className={`rounded-t-3xl relative h-24 sm:h-32 md:h-48 lg:h-64 xl:h-80 ${bgColor}`}
     >
       <Image
         className="border-1 p-5 rounded-xl"

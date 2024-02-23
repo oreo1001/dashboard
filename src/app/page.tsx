@@ -10,6 +10,7 @@ import CustomCarousel2 from './guide/guideCarousel'
 import Footer from './footer'
 import CCDonna from './component/ccDonna'
 import ManageSchedule from './component/manageSchedule'
+import SimpleWindow from './component/simpleWindow'
 
 export default function Main() {
   //const accessToken = cookies().get('access_token') || ''
@@ -17,6 +18,7 @@ export default function Main() {
   return (
     <div className="h-screen min-h-screen">
       <DarkMode>
+        <SimpleWindow />
         <MainContent></MainContent>
         <CCDonna></CCDonna>
         <ShortExplain2></ShortExplain2>

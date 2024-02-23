@@ -5,9 +5,10 @@ import './globals.css'
 import Switcher from './component/switcher'
 import GOOGLE_AUTHORIZATION_URL from './component/googleUrl'
 import ImageFrame from './component/imageFrame'
-import { useAppSelector } from '@/redux/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { getAuthState } from '@/redux/slices/authSlice'
 import Image from 'next/image'
+import { clickUserButton, selectUserButton } from '@/redux/slices/tempSlice'
 
 export function MainNavbar() {
   const router = useRouter()
@@ -15,6 +16,14 @@ export function MainNavbar() {
     router.push(GOOGLE_AUTHORIZATION_URL)
   }
   const profile = useAppSelector(getAuthState)
+  const dispatch = useAppDispatch()
+  const userButton = useAppSelector(selectUserButton)
+  const buttonClick = (event: any) => {
+    event.stopPropagation()
+    if (!userButton) {
+      dispatch(clickUserButton(true))
+    }
+  }
 
   return (
     <div className="bg-[#15203B] w-full px-4 sm:px-6 lg:px-8">
@@ -60,7 +69,10 @@ export function MainNavbar() {
               </div>
             </div>
           ) : (
-            <div className="cursor-pointer flex justify-center items-center w-12 h-12 rounded-full bg-blue-500">
+            <div
+              className="cursor-pointer flex justify-center items-center w-12 h-12 rounded-full bg-blue-500"
+              onClick={buttonClick}
+            >
               <div className="text-xl md:text-2xl text-white font-medium flex">
                 {profile.name.substring(1, 2)}
               </div>

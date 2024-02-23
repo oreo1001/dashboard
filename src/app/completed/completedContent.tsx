@@ -3,8 +3,20 @@
 import { useRouter } from 'next/navigation'
 import { IoCheckmark } from 'react-icons/io5'
 import { MainNavbar } from '../mainNavBar'
+import { useCookies } from 'react-cookie'
+import { useAppDispatch } from '@/redux/hooks'
+import { useEffect } from 'react'
+import { sendProfileAPI, sendRefreshTokenToBack } from '../guide/loginFunction'
 
 export default function CompletedContent() {
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    sendProfileAPI(dispatch, cookies)
+  }, [])
+  useEffect(() => {
+    sendRefreshTokenToBack(dispatch, cookies)
+  }, [cookies.refresh_token]) // 쿠키가 변경될 때마다 useEffect 실행
   const router = useRouter()
   return (
     <div className="h-screen flex flex-col">
