@@ -28,7 +28,7 @@ function ImageButtonBlock({ src, text, text2 }: any) {
 }
 export function ShortExplain2() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-0 xl:px-12">
       <div className="flex flex-col px-4 font-semibold text-base md:text-2xl xl:text-4xl py-12 md:py-24 xl:py-28 justify-center text-center">
         <div>Stressed due to emailing back-and-forth?</div>
         <div className="pt-2">Donna is a perfect solution</div>
