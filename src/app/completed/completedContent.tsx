@@ -7,6 +7,8 @@ import { useCookies } from 'react-cookie'
 import { useAppDispatch } from '@/redux/hooks'
 import { useEffect } from 'react'
 import { sendProfileAPI, sendRefreshTokenToBack } from '../guide/loginFunction'
+import Image from 'next/image'
+import SimpleWindow from '../component/simpleWindow'
 
 export default function CompletedContent() {
   const [cookies, setCookie, removeCookie] = useCookies()
@@ -20,6 +22,7 @@ export default function CompletedContent() {
   const router = useRouter()
   return (
     <div className="h-screen flex flex-col">
+      <SimpleWindow />
       <MainNavbar></MainNavbar>
       <div className="flex-grow flex flex-col justify-center items-center">
         <IoCheckmark
@@ -31,14 +34,19 @@ export default function CompletedContent() {
         </div>
         <div className="mt-8 flex flex-row border-[2px] border-stone-200 rounded-xl shadow-sm">
           <div className="flex">
-            <div className="flex justify-center items-center ml-5 my-auto w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#4c27ad]">
-              <div className="text-2xl md:text-3xl text-white font-medium">
-                D
-              </div>
+            <div className="relative flex justify-center items-center my-auto w-[70px] h-[70px] rounded-full ml-5">
+              <Image
+                src="/assets/donnaMain.png"
+                alt="cover"
+                layout="fill"
+                objectFit="contain"
+                placeholder="blur"
+                blurDataURL="/assets/placeholder.png"
+              />
             </div>
-            <div className="py-3 flex flex-col mx-3 mr-5">
+            <div className="py-3 flex flex-col ml-4 mr-5">
               <div className="font-semibold text-xl">
-                Donna(heinz@wonmo.net!)
+                Donna(Donna@wonmo.net!)
               </div>
               <div className="text-md">Nice to e-meet you!</div>
               <div className="text-stone-400">
