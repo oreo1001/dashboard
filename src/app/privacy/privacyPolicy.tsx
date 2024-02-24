@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
         <div className="pt-10 text-2xl font-semibold">Introduction</div>
         <div className="pt-4 text-lg">
           <div>
-            Our Privacy Policy governs your visit to https://wonmo.donna.net/
+            Our Privacy Policy governs your visit to https://donna.support/
             and explains how we collect, safeguard and disclose information that
             results from your use of our Service.{' '}
           </div>
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
           <div className="pt-10 text-2xl font-semibold">Definitions</div>
           <Def
             title="SERVICE"
-            content="means the https://wonmo.donna.net/ website operated by Wonmo, INC"
+            content="means the https://donna.support/ website operated by WonMo, Inc."
           ></Def>
           <Def
             title="PERSONAL DATA"
@@ -166,23 +166,6 @@ export default function PrivacyPolicy() {
               ]}
             />
           </div>
-          <div className="list-decimal text-lg">
-            <div className="text-xl font-semibold pt-4 pb-5">
-              Information Collected Automatically From You.
-            </div>
-            <CustomList
-              title="Log & Device Data"
-              descriptionList={[
-                'When you use Donna, we and our authorized third parties may automatically record certain information (“log data”), including information that your browser sends whenever you visit our Website. This log data may include the web address you came from or are going to, your device model, operating system, browser type, unique device identifier, IP address and time zone or approximate location. Whether we collect some or all of this information often depends on what type of device you’re using and its settings. For example, different types of information are available depending on whether you’re using a Mac or PC. To learn more about what information your device makes available to us, please check the policies of your device manufacturer or software provider.',
-              ]}
-            />
-            <CustomList
-              title="Cookie Data"
-              descriptionList={[
-                'Depending on how you’re accessing our services and subject to your consent, opt-out preferences, or other appropriate legal basis where legally required, we and our authorized third parties may use “Cookies” (a small text file sent by your computer each time you visit our Website, unique to your Donna account or your browser) or similar technologies to record log data. When we use Cookies, we may use ‘session’ Cookies (that last until you close your browser) or ‘persistent’ Cookies (that last until you or your browser deletes them). For example, we may use Cookies to keep you logged into Donna. Some of the Cookies we use are associated with your Donna account (including Personal Data about you, such as the email address you gave us), and other Cookies are not. ',
-              ]}
-            />
-          </div>
         </div>
 
         <div>
@@ -196,28 +179,6 @@ export default function PrivacyPolicy() {
                 'We will use your information to provide our Website and App Functionallity to you, including to facilitate scheduling; create and manage your account; respond to your inquiries; prevent or address service errors, security, or technical issues; analyze and monitor usage; prevent spam, fraud and abuse on the Website; and for other customer service and support purposes. We use the payment information you provide to us in order to alert you of past, current, and upcoming charges, to allow us to present the billing history to you on your billing page on the Website, and to perform internal financial processes, such as looking at the status of a credit card charge. In the event of a credit card dispute, we also share account information with your bank to verify the legitimacy of a charge. ',
               ]}
             />
-          </div>
-        </div>
-
-        <div>
-          <div className="pt-10 text-2xl font-semibold">
-            With Whom We May Share Your Information
-          </div>
-          <div className="text-lg pt-4">
-            We use other companies, agents, or contractors (“Service Providers”)
-            to perform services on our behalf or to assist us with providing
-            services and communicating with you. For Example, when you integrate
-            Zoom service, you’d share your information(such as the email address
-            or name).
-          </div>
-          <div className="text-lg pt-4">
-            Also, you can share your information with foundation model
-            providers. When you add Donna to an email, we use OpenAI&apos;s GPT
-            models to parse the thread. This enables us to take the correct
-            action on your behalf. Any information in the emails that Donna is
-            cc&apos;d on will be shared with OpenAI. OpenAI&apos;s use of your
-            personal information is governed by their Privacy Policy, which can
-            be found at OpenAI Privacy Policy
           </div>
         </div>
 
@@ -257,7 +218,7 @@ export default function PrivacyPolicy() {
           </div>
           <div className="text-lg pt-4">
             If you wish to delete your personal information from our app, please
-            send an email to wonmo2770@gmail.com. We will proceed with the
+            send an email to founder@donna.support. We will proceed with the
             necessary steps upon receiving your request.
           </div>
         </div>
@@ -280,8 +241,7 @@ export default function PrivacyPolicy() {
                 'Analytics Providers: For analyzing service usage and improving user experience.',
                 'Marketing Partners: For targeted advertising and promotional campaigns.',
                 'Cloud Storage Providers: For secure data storage and backup.',
-                'Payment Processors:  For processing transactions securely.',
-                "Foundation Model Providers: When you add Donna to an email, we use OpenAI’s GPT models to parse the thread. This enables us to take the correct action on your behalf. Any information in the emails that Donna is cc'd on will be shared with OpenAI. OpenAI's use of your personal information is governed by their Privacy Policy, which can be found at  OpenAI Privacy Policy",
+                'Payment Processors:  For processing transactions securely.'
               ]}
             />
             <CustomList
