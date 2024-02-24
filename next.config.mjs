@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:3000' + '/:path*',
+        destination: process.env.NEXT_PUBLIC_THIS_APP_URL + '/:path*',
       },
     ]
   },
